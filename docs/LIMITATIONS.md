@@ -1,0 +1,12 @@
+# Limitations
+
+1. **Not field-tested.** No item has been given to students as part of this project. Difficulty levels (1–3) are the author's hypotheses. Real difficulty and discrimination are unknown until schools calibrate locally (see `calibration/`).
+2. **A choice is evidence, not a diagnosis.** A multiple-choice option shows what a student picked, not the reasoning behind it. A student may choose a coded distractor by guessing or by a route other than the one described. Each code includes a probe question so the teacher can confirm before re-teaching.
+3. **Limited repeat opportunities per form.** On a 20-item form, only 10 codes (Form A) and 9 (Form B) appear on two or more items, which is the threshold for flagging a pattern. The other codes appear once per form. This trades diagnostic depth for coverage of all eight strands. See `docs/design_check.txt`, and NEXT_STEPS for targeted follow-up mini-forms.
+4. **The simulation tests the logic, not students.** The recovery figures in `docs/design_check.txt` (precision 0.78, recall 0.62 among flaggable codes) come from synthetic data under assumed response behavior. They show the scoring code works as intended. They say nothing about how real students respond.
+5. **Some items carry a single misconception across several options** (for example EQ05, where three options are all "EQ-UNIQUE" variants). Those items diagnose one idea deeply rather than several broadly.
+6. **Grade 9–12 readiness, not the full high-school curriculum.** The strands target prerequisite and early-algebra ideas that predict success in Algebra I and II. Quadratics beyond factoring, systems, exponential functions and statistics are out of scope for v1.0.
+7. **NAEP alignment is at the content-area level in v1.0.** `naep_focus` is a plain-language description. Mapping to 2026 framework objective IDs and the item-by-item comparison against released grade 12 NAEP items are scheduled for v1.1 (`docs/NAEP_ALIGNMENT.csv`). The NAGB item-release policy (2002) calls for wide distribution of released items but does not state a license, so the bank references NAEP items by ID only.
+8. **Text-only items.** No item uses a figure. Graph interpretation (LINF05) is described in words, which tests reading of a described graph rather than reading of a drawn one.
+9. **Language and accessibility.** Items are in English, and reading load varies (the MOD strand is heavier). Translations and read-aloud guidance are not yet provided.
+10. **Not for high-stakes use.** Do not use scores for grades, placement or tracking.

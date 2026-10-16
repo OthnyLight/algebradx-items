@@ -1,0 +1,519 @@
+# AlgebraDx misconception catalog v1.0
+# Each wrong answer in items.yaml points to one code here.
+# "reveals": what choosing a distractor with this code suggests about the student's thinking.
+# "move":    the teaching move that addresses it (concrete, usable next lesson).
+# "probe":   a quick follow-up question to confirm the diagnosis before re-teaching.
+# "refs":    keys into docs/REFERENCES.md.
+# Drafted with AI assistance; reviewed and verified by the author (v1.0.0, 2026-10-10).
+
+EQ-OP:
+  name: "Equal sign as \"the answer comes next\""
+  strand: EQ
+  reveals: "Reads \"=\" as a signal to compute, not as a statement that two sides have the same value. Equations become instructions read left to right."
+  move: "Use true/false and open number sentences with operations on both sides (8 + 4 = n + 5; 47 + 38 = 48 + 37). Ask students to justify without computing. Make \"is this statement true?\" the routine question before \"what is the answer?\""
+  probe: "Is 7 = 3 + 4 true? Is 3 + 4 = 4 + 3 true? Explain."
+  refs: [kieran1981, knuth2006, carpenter2003]
+
+EQ-ONESIDE:
+  name: "Operation applied to only part of the equation"
+  strand: EQ
+  reveals: "Knows \"do something to get x alone\" but not that each step must keep both sides equal. Applies the step to the most visible term only."
+  move: "Pair each solving step with a check by substitution of the original solution into the new equation. If the new equation is false, the step broke equality. Use balance or tape diagrams for multi-term sides."
+  probe: "x = 5 solves 4x − 8 = 12. Does x = 5 solve x − 8 = 3? What went wrong?"
+  refs: [kieran1981, booth2014]
+
+EQ-TRANSPOSE:
+  name: "\"Move it to the other side\" without the inverse operation"
+  strand: EQ
+  reveals: "Has memorized a move rule (\"change sides\") without the reason (subtract from both sides). Sign is kept, or changed inconsistently, when a term crosses."
+  move: "Ban the word \"move\" for a week. Write the both-sides operation explicitly (−7 on each side) and show the incorrect and correct versions side by side. Ask students to explain why the incorrect one changes the solution."
+  probe: "Solve 7 − 2x = 15, writing the operation you apply to BOTH sides on each line."
+  refs: [booth2014, kirshner2004]
+
+EQ-UNIQUE:
+  name: "Every equation has exactly one numerical solution"
+  strand: EQ
+  reveals: "Treats solving as producing a single number. Can't interpret 0 = 0 (identity) or 0 = 5 (contradiction), and may test a single value and stop."
+  move: "Sort equations into one / none / infinitely many solutions by substituting several values. Connect identities to \"these two expressions are equivalent\" from expression work."
+  probe: "Try x = 0, 1, 10 in 2(x + 3) = 2x + 6. What do you notice?"
+  refs: [knuth2006]
+
+EQ-BOTHSIDES:
+  name: "Unknown on both sides cannot be solved"
+  strand: EQ
+  reveals: "Solving is \"undo operations on the number until x is alone\". When x appears on both sides there is no starting point, so the student declares no solution."
+  move: "Present x on both sides as a balance. Removing the same x-amount from each side keeps it level. Start with cases where one side's x-term is a whole multiple of the other."
+  probe: "Is x = 5 a solution of 3(x − 2) = x + 4? Check it."
+  refs: [kieran1981]
+
+VAR-CONJOIN:
+  name: "Conjoining unlike terms"
+  strand: VAR
+  reveals: "Expects an algebraic answer to be a single term (\"closure\"), so 2x + 3 becomes 5x or 7 − 2x becomes 5x."
+  move: "Substitution check. Evaluate 2x + 3 and 5x at x = 10 and compare. Use algebra tiles or \"3 apples + 2 bananas\" only as a bridge to the substitution check, not as the explanation; see VAR-LABEL."
+  probe: "Is 2x + 3 equal to 5x when x = 10? When x = 1? So are they equivalent?"
+  refs: [booth1988, kuchemann1981]
+
+VAR-CONCAT:
+  name: "Concatenation (3x with x = 6 read as 36)"
+  strand: VAR
+  reveals: "Brings the place-value meaning of juxtaposed digits into algebra, where juxtaposition means multiplication."
+  move: "Write the multiplication sign explicitly during substitution (3 · 6), then fade it. Contrast \"36\" and \"3x when x = 6\" in a worked example."
+  probe: "If x = 6, what is 3x? Write it with a multiplication sign."
+  refs: [booth1988, matz1982]
+
+VAR-NOT-NUMBER:
+  name: "Letter treated as not standing for a number"
+  strand: VAR
+  reveals: "Ignores the letter or deletes it (\"4x − x = 4\"), treating x as a removable symbol rather than a quantity."
+  move: "Read every expression aloud as a quantity (\"four of x, take away one of x\"). Use tables of values to show what the expression produces as x changes."
+  probe: "Complete the table for 4x − x with x = 1, 2, 3. What pattern do you see?"
+  refs: [kuchemann1981, booth1988]
+
+VAR-LABEL:
+  name: "Letter as object or label (\"e for even\", \"a for apples\")"
+  strand: VAR
+  reveals: "Reads letters as abbreviations for things or properties rather than as numbers that vary."
+  move: "Insist on precise definitions (\"let a = the NUMBER of apples\"). Give items where the letter's initial is a trap (s for students vs. the number of students)."
+  probe: "In 'let e be any even number', what kind of thing is e? Name three values it could be."
+  refs: [kuchemann1981, clement1982]
+
+VAR-DIFFERENT:
+  name: "Different letters must have different values"
+  strand: VAR
+  reveals: "Believes distinct letters must name distinct numbers, so a + b + c = a + p + c \"can never\" be true."
+  move: "Have students find values that make the statement true, and values that make it false. Introduce \"always / sometimes / never\" as a routine with a required example for \"sometimes\"."
+  probe: "Can b and p both equal 4? Try it in a + b + c = a + p + c."
+  refs: [kuchemann1981]
+
+VAR-SURFACE:
+  name: "Judging by surface features of symbols"
+  strand: VAR
+  reveals: "Decides from appearance (\"it has a 2 so it is even\", \"multiplying makes bigger\", \"same letters on both sides so always true\") without reasoning about values."
+  move: "Counterexample hunts. For each claim, students test negative, zero, fractional and large values. Celebrate a single counterexample as a proof that \"always\" is false."
+  probe: "Is 2n always bigger than n + 2? Try n = 1 and n = −3."
+  refs: [kuchemann1981, booth2014]
+
+VAR-SPECIFIC:
+  name: "Generalizing from a single example"
+  strand: VAR
+  reveals: "Tests one convenient value (often n = 2) and treats the result as a general truth. Doesn't yet see a variable as standing for all values at once."
+  move: "Require at least three test values chosen to break the claim (0, 1, a negative, a fraction). Then ask for a reason that holds for every value, not just the tested ones."
+  probe: "n + 2 was even when n = 2. Is it always even? Choose a value that tests it fairly."
+  refs: [kuchemann1981]
+
+VAR-COEF-ADD:
+  name: "Coefficient read as addition (3x as 3 + x)"
+  strand: VAR
+  reveals: "Treats the coefficient as a separate number added to x, so \"undoing\" 3x means subtracting 3."
+  move: "Rewrite 3x as x + x + x and as 3 · x. Ask what single operation turns 3x back into x. Contrast with 3 + x."
+  probe: "If x = 5, what is 3x? What is 3 + x? Are they the same?"
+  refs: [booth1988]
+
+LIKE-TERMS-OP:
+  name: "Adding like terms treated as multiplication"
+  strand: VAR
+  reveals: "Confuses the rules for combining terms with the rules for multiplying them (3x + 5x → 15x or 8x², x + x → x²)."
+  move: "Contrast pairs: 3x + 5x vs. 3x · 5x, x + x vs. x · x, each checked by substituting x = 2. Area model for products, length model for sums."
+  probe: "Evaluate 3x + 5x and 8x² at x = 2."
+  refs: [booth2014, matz1982]
+
+DIST-FIRST:
+  name: "Distributes to the first term only"
+  strand: DIST
+  reveals: "Multiplies the term next to the coefficient and leaves the rest of the parentheses alone."
+  move: "Area model. A rectangle of width 4 and length x + 3 has two parts, so it has two products. Then use arrows from the factor to every term inside the parentheses, and fade them."
+  probe: "Draw a rectangle for 4(x + 3). How many pieces does it have?"
+  refs: [matz1982, booth2014]
+
+DIST-ADD:
+  name: "Adds the outside factor instead of multiplying"
+  strand: DIST
+  reveals: "Treats the factor outside the parentheses as joining by addition (4(x + 3) → 4x + 7)."
+  move: "Read 4(x + 3) as \"four groups of (x + 3)\" and write the groups out once: (x + 3) + (x + 3) + (x + 3) + (x + 3)."
+  probe: "Write 4(x + 3) as a sum of four groups. Now simplify."
+  refs: [booth1988]
+
+DIST-NEG:
+  name: "Negative not distributed to every term"
+  strand: DIST
+  reveals: "Drops parentheses after a minus sign without changing every sign inside. Reads −(x − 3) as −x − 3."
+  move: "Rewrite the minus as −1 · ( ), then distribute. Check by substitution (x = 0 is a quick test: 10 − (0 − 3) = 13)."
+  probe: "Evaluate 10 − (x − 3) at x = 0. Does your simplified form give the same?"
+  refs: [vlassis2004, booth2014]
+
+DIST-SQUARE:
+  name: "(a + b)² = a² + b² (linearity overgeneralization)"
+  strand: DIST
+  reveals: "Extends the distributive pattern to exponents, treating squaring as if it distributes over addition."
+  move: "Area model of a square with side x + 5 shows four regions, not two. Numeric check: (3 + 5)² = 64, but 3² + 5² = 34."
+  probe: "Is (3 + 5)² equal to 3² + 5²? Draw the square."
+  refs: [matz1982]
+
+DIST-PARTIAL:
+  name: "Incomplete expansion (misses a cross term)"
+  strand: DIST
+  reveals: "Knows binomial products have more than two terms but tracks the partial products inconsistently."
+  move: "Use a 2×2 area grid (box method) for every binomial product until students record all four partial products reliably."
+  probe: "Fill in a 2×2 grid for (x + 5)(x + 5)."
+  refs: [matz1982]
+
+DIST-CANCEL:
+  name: "Cancelling across addition in a fraction"
+  strand: DIST
+  reveals: "Treats a common number in numerator and denominator as cancellable even when it is a term, not a factor."
+  move: "Factor first, then cancel: (3x + 6)/3 = 3(x + 2)/3. Numeric check: x = 1 gives 9/3 = 3, not 7."
+  probe: "Evaluate (3x + 6)/3 at x = 1. Does x + 6 give the same?"
+  refs: [kirshner2004]
+
+FACT-SQUARE:
+  name: "Difference of squares treated as a perfect square"
+  strand: DIST
+  reveals: "Matches the shape \"x² … 9\" to (x − 3)² without checking the middle term."
+  move: "Multiply back as a routine. Every factorization is checked by expanding. Contrast x² − 9 with x² − 6x + 9."
+  probe: "Expand (x − 3)². Is it x² − 9?"
+  refs: [kirshner2004]
+
+FACT-SUM-PRODUCT:
+  name: "Sum/product search misapplied"
+  strand: DIST
+  reveals: "Searches for factor pairs of the constant without matching the middle coefficient (here, zero)."
+  move: "Make the coefficient of x explicit (x² + 0x − 9) before searching for the pair."
+  probe: "Rewrite x² − 9 with an x-term. What must the two numbers add to?"
+  refs: [kirshner2004]
+
+FACT-COMMON:
+  name: "Pulls out a factor that is not common to every term"
+  strand: DIST
+  reveals: "Factors x out of x² − 9 as if 9 contained x."
+  move: "Before factoring out, list each term's factors in a row and highlight only what is shared by all rows."
+  probe: "Expand x(x − 9). Is it x² − 9?"
+  refs: [kirshner2004]
+
+SIGN-DROP:
+  name: "Drops or mishandles a negative sign"
+  strand: NUM
+  reveals: "Loses the sign of a coefficient or result, especially when dividing (−2x = 8 → x = 4) or when solving x − 4 = 0."
+  move: "Circle each term together with the sign in front of it. Check every answer by substitution."
+  probe: "Substitute your answer into the original equation. Is it true?"
+  refs: [vlassis2004]
+
+SIGN-SUB:
+  name: "Errors with subtracting or multiplying negatives"
+  strand: NUM
+  reveals: "Treats −3 · (−2) as −6, or subtracting a negative as subtracting."
+  move: "Use a number line with direction for subtraction. Build the rule from patterns (3 · −2, 2 · −2, 1 · −2, 0 · −2, −1 · −2 …) rather than stating it."
+  probe: "Continue the pattern: 2 · (−2) = −4, 1 · (−2) = −2, 0 · (−2) = 0, (−1) · (−2) = ?"
+  refs: [vlassis2004]
+
+INV-OP:
+  name: "Wrong inverse operation"
+  strand: LIN
+  reveals: "Undoes an operation with the wrong inverse (undoes ÷3 by ÷3, or undoes ×r by −r)."
+  move: "Arrow diagrams (\"x → ×3 → +2 → 17\") read forward, then undone backward with inverses written on the arrows."
+  probe: "Draw the arrow diagram for x/3 + 2 and undo it."
+  refs: [kieran1981]
+
+INEQ-FLIP:
+  name: "Inequality direction not reversed after multiplying or dividing by a negative"
+  strand: LIN
+  reveals: "Solves inequalities exactly like equations. The ordering meaning of < is not connected to the steps."
+  move: "Test a value in the original inequality and in the \"answer\" (x = −5 makes −3x + 4 > 10 true; does x > −2 include −5?). Derive the flip from the number line, not as a rule."
+  probe: "Is x = −5 a solution of −3x + 4 > 10? Is it in your answer set?"
+  refs: [booth2014]
+
+FRAC-ORDER:
+  name: "Divides in the wrong order"
+  strand: LIN
+  reveals: "Knows division is needed but does not track which quantity is the dividend."
+  move: "Check with numbers. If d = 100 and r = 50, what must t be? Which expression gives 2?"
+  probe: "d = 100, r = 50. Compute d/r and r/d. Which makes sense as a time?"
+  refs: [kieran1981]
+
+EXP-NEG-BASE:
+  name: "−a² read as (−a)²"
+  strand: NUM
+  reveals: "Applies the exponent to the negative sign. Order of operations with the unary minus is not secure."
+  move: "Read −3² aloud as \"the opposite of three squared\". Contrast −3² and (−3)² in a worked-example pair. Substitute negatives in parentheses, always."
+  probe: "Evaluate −3² and (−3)². Explain the difference in words."
+  refs: [cangelosi2013]
+
+EXP-MULT:
+  name: "Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)"
+  strand: NUM
+  reveals: "Reads the exponent as a factor rather than a count of repeated factors."
+  move: "Expand into repeated factors (x³ = x · x · x) every time until fluent. Contrast 2³ and 2 · 3."
+  probe: "Write 2³ and 3 · 2 as repeated operations. Are they equal?"
+  refs: [cangelosi2013]
+
+EXP-PRODUCT-MULT:
+  name: "Multiplies exponents when multiplying powers"
+  strand: NUM
+  reveals: "Confuses the product rule (add exponents) with the power rule (multiply exponents)."
+  move: "Expand both: x³ · x⁴ is seven x's in a row, while (x³)⁴ is four groups of three. Derive both rules from expansion side by side."
+  probe: "Write x³ · x⁴ as repeated factors. Count the x's."
+  refs: [matz1982]
+
+EXP-NEG-EXP:
+  name: "Negative exponent makes the value negative"
+  strand: NUM
+  reveals: "Associates the negative sign in the exponent with a negative result."
+  move: "Pattern table: 2³ = 8, 2² = 4, 2¹ = 2, 2⁰ = 1, 2⁻¹ = ½ … each step divides by 2."
+  probe: "Continue the pattern 8, 4, 2, 1, … for 2⁻¹, 2⁻², 2⁻³."
+  refs: [cangelosi2013]
+
+ORDER-OPS:
+  name: "Order of operations not applied to algebraic expressions"
+  strand: NUM
+  reveals: "Applies operations in the order they are written, or subtracts before squaring."
+  move: "Rewrite each expression with explicit grouping before substitution. Ask \"what is the last operation?\" to identify the structure."
+  probe: "In x² − 1, what is the last operation performed?"
+  refs: [kirshner2004]
+
+FRAC-ADD-ACROSS:
+  name: "Adds numerators and denominators"
+  strand: NUM
+  reveals: "Adds fractions componentwise, so the meaning of a denominator as a unit size is not active."
+  move: "Numeric check (1/2 + 1/2 is not 2/4). Rewrite to a common denominator with the unit stated (\"thirds and quarters → twelfths\")."
+  probe: "Is 1/2 + 1/2 equal to 2/4?"
+  refs: [booth2014]
+
+FRAC-OP-SWAP:
+  name: "Uses the multiplication rule to add fractions"
+  strand: NUM
+  reveals: "Applies the \"multiply across\" procedure regardless of the operation."
+  move: "Contrast pairs of addition and multiplication with the same fractions, checked by substituting x = 12."
+  probe: "With x = 12, evaluate x/3 + x/4 and (x/3)(x/4)."
+  refs: [booth2014]
+
+SLOPE-INVERT:
+  name: "Slope computed as run over rise"
+  strand: LINF
+  reveals: "Knows slope is a ratio of differences but not which difference is per which. The meaning \"change in y per 1 unit of x\" is not active."
+  move: "Define slope as a rate (\"how much y changes when x increases by 1\") and read it off a table before any formula."
+  probe: "When x goes up by 1, how much does y go up between (2, 5) and (6, 13)?"
+  refs: [teuscher2010, leinhardt1990]
+
+SLOPE-ORDER:
+  name: "Inconsistent order when subtracting coordinates"
+  strand: LINF
+  reveals: "Subtracts y-values in one order and x-values in the other, producing the wrong sign."
+  move: "Label points 1 and 2 and keep the same order in the numerator and denominator. Sketch the points first to predict the sign."
+  probe: "Before computing, does the line go up or down from left to right?"
+  refs: [teuscher2010]
+
+SLOPE-INCOMPLETE:
+  name: "Slope as change in y only"
+  strand: LINF
+  reveals: "Equates slope with how much y changes, ignoring the change in x."
+  move: "Compare two lines with the same rise and different runs. Ask which is steeper and why."
+  probe: "Two lines both rise 8. One runs 4, one runs 8. Same slope?"
+  refs: [teuscher2010]
+
+SLOPE-SIGN:
+  name: "Ignores direction of change"
+  strand: LINF
+  reveals: "Finds the size of the rate but not whether y increases or decreases."
+  move: "Before writing an equation from a table, students state \"as x goes up, y goes ___\" and check that the sign of the slope matches."
+  probe: "As x goes up in the table, does y go up or down?"
+  refs: [leinhardt1990]
+
+INTERCEPT-COEF:
+  name: "Reads the coefficient of x as the intercept"
+  strand: LINF
+  reveals: "Identifies \"the number in the equation\" without knowing which parameter plays which role."
+  move: "Evaluate the function at x = 0 and connect the result to the graph's crossing point."
+  probe: "What is y when x = 0 in y = 3x − 4?"
+  refs: [leinhardt1990]
+
+INTERCEPT-X:
+  name: "Confuses y-intercept with x-intercept"
+  strand: LINF
+  reveals: "Knows \"intercept\" means a crossing point but not which axis is meant."
+  move: "Graph and table together. The y-intercept is the row with x = 0, and the x-intercept is the row with y = 0."
+  probe: "Which row of a table shows the y-intercept?"
+  refs: [leinhardt1990]
+
+RATE-START-SWAP:
+  name: "Swaps the rate and the starting amount"
+  strand: LINF
+  reveals: "Recognizes a linear model has two parameters but attaches the meanings to the wrong numbers."
+  move: "In context, ask \"what does it cost for 0 days / minutes?\" and \"what changes each additional day?\" before writing anything. Annotate each number in the model with units (dollars, dollars per day)."
+  probe: "How much would the rental cost for 0 days? For 1 day? For 2?"
+  refs: [leinhardt1990]
+
+RATE-TOTAL:
+  name: "Rate confused with total"
+  strand: LINF
+  reveals: "Does not distinguish a per-unit amount from an accumulated amount."
+  move: "Units analysis. Write the units of every term (0.10 dollars per minute × m minutes = dollars)."
+  probe: "What are the units of 0.10 in C = 15 + 0.10m?"
+  refs: [teuscher2010]
+
+PARAM-VAR:
+  name: "Constant confused with variable"
+  strand: LINF
+  reveals: "Cannot separate the fixed numbers in a model from the quantity that varies."
+  move: "Vary the input in a table and ask which numbers in the formula changed and which stayed the same."
+  probe: "If m changes from 100 to 200, which numbers in C = 15 + 0.10m change?"
+  refs: [kuchemann1981]
+
+PROPORTIONAL-ALL:
+  name: "Every linear relationship treated as proportional"
+  strand: LINF
+  reveals: "Assumes y = mx and ignores the starting value."
+  move: "Check the x = 0 row of every table first. Contrast proportional and non-proportional tables side by side."
+  probe: "What is y when x = 0 in the table? What does y = −3x give at x = 0?"
+  refs: [leinhardt1990]
+
+GRAPH-PICTURE:
+  name: "Graph read as a picture of the situation"
+  strand: LINF
+  reveals: "Interprets the shape of the graph as the shape of the physical path (flat line = flat road)."
+  move: "Have students act out graphs (walk to match a distance-time graph) and narrate. Always state \"the vertical axis shows ___\"."
+  probe: "What does the vertical axis measure? What happens to that quantity from t = 1 to t = 2?"
+  refs: [bell1981, leinhardt1990]
+
+GRAPH-VARIABLE:
+  name: "Graph read as showing a different quantity"
+  strand: LINF
+  reveals: "Reads a distance-time graph as if it showed speed, so a flat segment means constant speed."
+  move: "Pair distance-time and speed-time graphs of the same trip, and match segments between them."
+  probe: "If the distance does not change for an hour, what is the speed?"
+  refs: [bell1981, leinhardt1990]
+
+FN-NOTATION:
+  name: "f(x) read as arithmetic on f"
+  strand: FUNC
+  reveals: "Treats f(3) as f × 3 or f(x + 1) as an operation on the rule, rather than as \"the output when the input is 3\"."
+  move: "Use an input-output machine. Write f(□) = □² − 1 with a blank box, and substitute whatever goes in the box, including expressions."
+  probe: "f(x) = x² − 1. Fill in: f(□) = □² − 1. Now put 3 in the box."
+  refs: [oehrtman2008]
+
+FN-SHIFT:
+  name: "f(x + 1) = f(x) + 1"
+  strand: FUNC
+  reveals: "Thinks changing the input by 1 changes the output by 1. Input and output transformations are confused."
+  move: "Table of f(x) and f(x + 1) side by side for several x. Contrast f(x + 1) with f(x) + 1 numerically."
+  probe: "f(x) = 2x + 3. Compute f(2 + 1) and f(2) + 1."
+  refs: [oehrtman2008]
+
+FN-REVERSE:
+  name: "Input and output reversed"
+  strand: FUNC
+  reveals: "Reads h(2) = 7 as input 7, output 2. In definitions, checks repeated outputs instead of repeated inputs."
+  move: "Always label pairs as (input, output) and arrows input → output. Use \"one input, one output\" machine language."
+  probe: "In h(2) = 7, which number went into the machine?"
+  refs: [oehrtman2008]
+
+FN-EQUATION:
+  name: "Any equation is a function"
+  strand: FUNC
+  reveals: "Equates \"function\" with \"has a formula\", rather than with each input having exactly one output."
+  move: "For x = y², ask \"if x = 4, what is y?\" and find two answers. Graph it and apply the definition directly."
+  probe: "In x = y², how many y-values go with x = 4?"
+  refs: [oehrtman2008]
+
+FN-LINE:
+  name: "Every straight line is a function"
+  strand: FUNC
+  reveals: "Has generalized \"linear functions\" to \"all lines\", so the vertical line x = 3 is accepted."
+  move: "List points on x = 3 and check one-input-one-output directly."
+  probe: "Name three points on the line x = 3. What do their x-values have in common?"
+  refs: [oehrtman2008]
+
+FN-SINGLEPOINT:
+  name: "Rule inferred from one input-output pair"
+  strand: FUNC
+  reveals: "Treats one data point as determining the whole function."
+  move: "Generate several different rules through the same point (2, 7). Discuss what extra information pins a function down."
+  probe: "Find two different rules with h(2) = 7."
+  refs: [oehrtman2008]
+
+DOMAIN-ZERO:
+  name: "Zero is always excluded from the domain"
+  strand: FUNC
+  reveals: "Remembers \"you can't divide by zero\" as \"x can't be zero\", rather than \"the denominator can't be zero\"."
+  move: "Ask \"what input makes the denominator 0?\" and solve it explicitly."
+  probe: "What is f(0) for f(x) = 1/(x − 4)? Is it defined?"
+  refs: [oehrtman2008]
+
+DOMAIN-POSITIVE:
+  name: "Domain restrictions borrowed from square roots"
+  strand: FUNC
+  reveals: "Applies a \"must be positive\" restriction from square-root functions to rational functions."
+  move: "Evaluate the function at inputs below the suspected boundary (f(0) = −1/4) to show they are defined."
+  probe: "Is f(0) defined for f(x) = 1/(x − 4)?"
+  refs: [oehrtman2008]
+
+MOD-REVERSAL:
+  name: "Students-and-professors reversal"
+  strand: MOD
+  reveals: "Writes symbols in word order (\"six times students… professors\" → 6S = P), treating letters as labels rather than numbers."
+  move: "Test with numbers. If there are 10 professors, how many students? Does the equation give that? Write the equation only after the numeric check."
+  probe: "If P = 10, what should S be? Does 6S = P give that?"
+  refs: [clement1982]
+
+MOD-ADDITIVE:
+  name: "Multiplicative comparison read as additive"
+  strand: MOD
+  reveals: "Interprets \"six times as many\" as \"six more than\"."
+  move: "Contrast \"6 more than\" and \"6 times as many\" with bar models at two different sizes."
+  probe: "With 10 professors, how many students is '6 more than' and how many is '6 times as many'?"
+  refs: [clement1982]
+
+MOD-KEYWORD:
+  name: "Keyword translation"
+  strand: MOD
+  reveals: "Maps key words to operations or symbols (\"times\" → multiply the letters, \"less than\" → <, \"twice\" → +2) without modeling the relationship."
+  move: "Retire keyword charts. Have students describe the quantities and the relationship first, then test the expression with a number."
+  probe: "Pick a number for n. What is '3 less than twice n'? Does your expression give that?"
+  refs: [clement1982]
+
+MOD-STRUCTURE:
+  name: "Word-order translation misses grouping"
+  strand: MOD
+  reveals: "Translates phrase by phrase, so \"twice the sum of n and 3\" becomes 2n + 3, or the grouping is placed on the wrong part."
+  move: "Ask for the last operation in the phrase (\"twice the sum\" → the last operation is doubling) and build the expression from the outside in."
+  probe: "In 'twice the sum of n and 3', what is the last thing you do?"
+  refs: [clement1982]
+
+MOD-OP-SWAP:
+  name: "Operation word misread"
+  strand: MOD
+  reveals: "Interprets \"sum\" or \"plus\" as multiplication, or the reverse."
+  move: "Quick numeric translation drills (\"the sum of 4 and 3 is ___\") before introducing variables."
+  probe: "What is the sum of 4 and 3? The product?"
+  refs: [clement1982]
+
+MOD-ORDER-SUB:
+  name: "Reverses the order in \"less than\""
+  strand: MOD
+  reveals: "Writes \"3 less than 2n\" as 3 − 2n, following word order."
+  move: "Numeric translation first (\"3 less than 10 is 7, so 10 − 3\"), then replace 10 by the expression."
+  probe: "What is 3 less than 10? Write the subtraction."
+  refs: [clement1982]
+
+PCT-ABSOLUTE:
+  name: "Percent treated as an absolute amount"
+  strand: MOD
+  reveals: "Adds 20 (or 0.20) to the price rather than 20% of the price."
+  move: "Use a double number line with 100% = p and mark 120%. Check with p = $50."
+  probe: "If p = $50, what is the price after a 20% increase?"
+  refs: [parker1995]
+
+PCT-PART-ONLY:
+  name: "Computes the change, not the new amount"
+  strand: MOD
+  reveals: "Finds 20% of p correctly but reports the increase instead of the new total."
+  move: "Ask \"what does this expression give you, the increase or the new price?\" and annotate both."
+  probe: "With p = $50, what does 0.2p equal? Is that the new price?"
+  refs: [parker1995]
+
+PCT-DIRECTION:
+  name: "Percent change applied in the wrong direction"
+  strand: MOD
+  reveals: "Divides by 1.2 (undoing an increase) when it should multiply. Multiplicative structure is partly in place but the direction is lost."
+  move: "Estimate first. After an increase the new price must be larger. Check whether the expression gives a larger value."
+  probe: "Is p/1.2 bigger or smaller than p?"
+  refs: [parker1995]

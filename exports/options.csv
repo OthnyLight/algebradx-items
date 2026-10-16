@@ -1,0 +1,161 @@
+item_id,option,text,is_key,misconception_code,misconception_name,reveals
+EQ01,A,3x = 15,1,,,
+EQ01,B,3x = 29,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved +7 to the right side without changing its sign (22 + 7).
+EQ01,C,x + 7 = 19,0,VAR-COEF-ADD,Coefficient read as addition (3x as 3 + x),Read 3x as 3 + x and 'removed' the 3 by subtracting it from 22.
+EQ01,D,3x + 7 = 15,0,EQ-ONESIDE,Operation applied to only part of the equation,"Subtracted 7 from the right side only, leaving +7 on the left."
+EQ02,A,"False, because the numbers on the two sides are different.",0,VAR-SURFACE,Judging by surface features of symbols,Judges equality by whether the symbols match rather than whether the values match.
+EQ02,B,"False, because 47 + 38 = 85, and 85 is not 48.",0,EQ-OP,"Equal sign as ""the answer comes next""",Reads '=' as 'the answer is next' and treats 48 as the result of 47 + 38.
+EQ02,C,"True, because 48 is one more than 47 and 37 is one less than 38.",1,,,
+EQ02,D,You cannot tell without computing both sides.,0,EQ-OP,"Equal sign as ""the answer comes next""",Can verify only by computing; does not yet use structure (compensation) to reason about equality.
+EQ03,A,x - 8 = 3,0,EQ-ONESIDE,Operation applied to only part of the equation,"Divided 4x and 12 by 4 but not the 8; division is applied to the most visible terms, not to whole sides."
+EQ03,B,x - 2 = 3,1,,,
+EQ03,C,4x = 4,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved -8 across as -8 (12 - 8) instead of adding 8 to both sides.
+EQ03,D,x - 8 = 12,0,EQ-ONESIDE,Operation applied to only part of the equation,"Divided only the x-term by 4, so 'getting x alone' was done to one term."
+EQ04,A,7x + 3 = 15,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation","Moved 2x to the left keeping its sign, so the x-terms were added instead of subtracted."
+EQ04,B,5x + 3 = 17x,0,VAR-CONJOIN,Conjoining unlike terms,"Combined 2x + 15 into 17x, treating unlike terms as combinable."
+EQ04,C,5x = 2x + 18,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved +3 to the right keeping its sign (15 + 3).
+EQ04,D,3x + 3 = 15,1,,,
+EQ05,A,Only x = 0,0,EQ-UNIQUE,Every equation has exactly one numerical solution,"Tested one convenient value and stopped, expecting exactly one solution."
+EQ05,B,"No values, because the x-terms cancel",0,EQ-UNIQUE,Every equation has exactly one numerical solution,Reached 6 = 6 (or 0 = 0) and read the disappearance of x as 'no solution'.
+EQ05,C,Every real number,1,,,
+EQ05,D,Only x = -3,0,EQ-UNIQUE,Every equation has exactly one numerical solution,Looked for a single 'special' value by setting the parentheses to zero.
+VAR01,A,4,0,VAR-NOT-NUMBER,Letter treated as not standing for a number,"Treated '- x' as deleting the letter, leaving 4; x is not acting as a quantity."
+VAR01,B,18,1,,,
+VAR01,C,40,0,VAR-CONCAT,Concatenation (3x with x = 6 read as 36),"Read 4x with x = 6 as the two-digit number 46, then subtracted 6."
+VAR01,D,3,0,VAR-NOT-NUMBER,Letter treated as not standing for a number,Simplified to 3x and then dropped the x (or treated it as 1).
+VAR02,A,8x + 2,1,,,
+VAR02,B,10x,0,VAR-CONJOIN,Conjoining unlike terms,Added every number and attached one x; expects a single-term answer.
+VAR02,C,15x + 2,0,LIKE-TERMS-OP,Adding like terms treated as multiplication,Multiplied the coefficients 3 and 5 when combining like terms.
+VAR02,D,8x² + 2,0,LIKE-TERMS-OP,Adding like terms treated as multiplication,"Treated x + x as x², mixing the rules for adding and multiplying terms."
+VAR03,A,Always true,0,VAR-SURFACE,Judging by surface features of symbols,Matched the a's and c's on both sides and stopped looking.
+VAR03,B,"Never true, because b and p are different letters",0,VAR-DIFFERENT,Different letters must have different values,Believes different letters must stand for different numbers.
+VAR03,C,"Sometimes true, when b = p",1,,,
+VAR03,D,"Never true, because there are no numbers to check",0,VAR-NOT-NUMBER,Letter treated as not standing for a number,Does not see letters as standing for numbers that can be tested.
+VAR04,A,n + 2,0,VAR-SPECIFIC,Generalizing from a single example,Checked one even value of n (such as 2) and generalized.
+VAR04,B,e,0,VAR-LABEL,"Letter as object or label (""e for even"", ""a for apples"")",Used the letter as an abbreviation for the property 'even'.
+VAR04,C,2n + 1,0,VAR-SURFACE,Judging by surface features of symbols,Saw the 2 and concluded 'even' without reasoning about the + 1.
+VAR04,D,2n,1,,,
+VAR05,A,"2n, because multiplying makes a number bigger",0,VAR-SURFACE,Judging by surface features of symbols,Applies 'multiplication makes bigger' without testing small or negative values.
+VAR05,B,They are equal,0,VAR-SPECIFIC,Generalizing from a single example,"Tested n = 2, where they are equal, and generalized."
+VAR05,C,"n + 2, because adding 2 always gives more",0,VAR-SPECIFIC,Generalizing from a single example,Tested a small value such as n = 1 and generalized.
+VAR05,D,It depends on the value of n,1,,,
+DIST01,A,4x + 3,0,DIST-FIRST,Distributes to the first term only,Multiplied only the first term inside the parentheses.
+DIST01,B,4x + 7,0,DIST-ADD,Adds the outside factor instead of multiplying,Added the 4 to the 3 instead of multiplying.
+DIST01,C,4x + 12,1,,,
+DIST01,D,12x,0,VAR-CONJOIN,Conjoining unlike terms,"Multiplied the numbers and attached the x, producing a single term."
+DIST02,A,13 - x,1,,,
+DIST02,B,7 - x,0,DIST-NEG,Negative not distributed to every term,Dropped the parentheses without changing the sign of -3.
+DIST02,C,13 + x,0,DIST-NEG,Negative not distributed to every term,Changed the sign of the last term only; the negative was not distributed to x.
+DIST02,D,x - 13,0,SIGN-SUB,Errors with subtracting or multiplying negatives,"Treated subtraction as if order did not matter, reversing the whole difference."
+DIST03,A,x² + 25,0,DIST-SQUARE,(a + b)² = a² + b² (linearity overgeneralization),"Squared each term separately, extending distribution to exponents."
+DIST03,B,x² + 10x + 25,1,,,
+DIST03,C,x² + 5x + 25,0,DIST-PARTIAL,Incomplete expansion (misses a cross term),Knows there is a middle term but recorded only one of the two cross products.
+DIST03,D,2x + 10,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Read 'squared' as 'times 2'.
+DIST04,A,x + 6,0,DIST-CANCEL,Cancelling across addition in a fraction,"Cancelled the 3 in 3x with the denominator, leaving the 6 untouched."
+DIST04,B,3x + 2,0,DIST-FIRST,Distributes to the first term only,Divided only the constant term by 3.
+DIST04,C,3x,0,VAR-CONJOIN,Conjoining unlike terms,"Combined 3x + 6 into 9x, then divided."
+DIST04,D,x + 2,1,,,
+DIST05,A,(x - 3)²,0,FACT-SQUARE,Difference of squares treated as a perfect square,Matched the shape 'x² and 9' to a perfect square without checking the middle term.
+DIST05,B,(x - 3)(x + 3),1,,,
+DIST05,C,(x - 9)(x + 1),0,FACT-SUM-PRODUCT,Sum/product search misapplied,Found factors of -9 without matching the x-coefficient (zero).
+DIST05,D,x(x - 9),0,FACT-COMMON,Pulls out a factor that is not common to every term,Factored out x as if every term contained x.
+LIN01,A,x = 4,0,SIGN-DROP,Drops or mishandles a negative sign,Reached -2x = 8 and divided by 2 instead of -2.
+LIN01,B,x = -11,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved 7 across keeping its sign (-2x = 22).
+LIN01,C,x = 3,0,VAR-CONJOIN,Conjoining unlike terms,Combined 7 - 2x into 5x.
+LIN01,D,x = -4,1,,,
+LIN02,A,x < -2,1,,,
+LIN02,B,x > -2,0,INEQ-FLIP,Inequality direction not reversed after multiplying or dividing by a negative,Solved exactly as an equation; did not reverse the inequality after dividing by -3.
+LIN02,C,x > 2,0,SIGN-DROP,Drops or mishandles a negative sign,"Dropped the negative coefficient (3x > 6), so no reversal seemed necessary."
+LIN02,D,x < -14/3,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Reversed correctly but moved +4 across keeping its sign (-3x > 14).
+LIN03,A,x = 1,0,INV-OP,Wrong inverse operation,Undid division by 3 by dividing by 3 again.
+LIN03,B,x = 13,0,EQ-ONESIDE,Operation applied to only part of the equation,Multiplied x/3 and 5 by 3 but not the 2.
+LIN03,C,x = 9,1,,,
+LIN03,D,x = 21,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved +2 across keeping its sign (x/3 = 7).
+LIN04,A,x = 3,0,DIST-FIRST,Distributes to the first term only,Expanded 3(x - 2) as 3x - 2.
+LIN04,B,x = 5,1,,,
+LIN04,C,x = 5/2,0,EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",Moved x to the left keeping its sign (3x + x = 10).
+LIN04,D,"There is no solution, because x is on both sides.",0,EQ-BOTHSIDES,Unknown on both sides cannot be solved,Believes an unknown on both sides cannot be solved.
+LIN05,A,t = d / r,1,,,
+LIN05,B,t = dr,0,INV-OP,Wrong inverse operation,Moved r to the other side keeping the operation (multiplication) instead of inverting it.
+LIN05,C,t = d - r,0,INV-OP,Wrong inverse operation,Undid multiplication by subtracting.
+LIN05,D,t = r / d,0,FRAC-ORDER,Divides in the wrong order,Knows division is needed but divided in the wrong order.
+NUM01,A,9,0,EXP-NEG-BASE,−a² read as (−a)²,Squared -3 as a whole: (-3)² instead of -(3²).
+NUM01,B,-9,1,,,
+NUM01,C,-6,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Read the exponent as multiplication: -3 · 2.
+NUM01,D,6,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Read the exponent as multiplication and also took the negative as part of the base.
+NUM02,A,-2,0,SIGN-SUB,Errors with subtracting or multiplying negatives,"Computed -3 · (-2) as -6, giving 4 - 6."
+NUM02,B,2,0,EXP-NEG-BASE,−a² read as (−a)²,"Substituted without parentheses so x² became -2² = -4, giving -4 + 6."
+NUM02,C,-10,0,EXP-NEG-BASE,−a² read as (−a)²,Both errors: x² as -4 and -3x as -6.
+NUM02,D,10,1,,,
+NUM03,A,x⁷,1,,,
+NUM03,B,x¹²,0,EXP-PRODUCT-MULT,Multiplies exponents when multiplying powers,Multiplied the exponents (power rule) instead of adding them.
+NUM03,C,12x²,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)","Read x³ as 3x and x⁴ as 4x, then multiplied."
+NUM03,D,2x⁷,0,LIKE-TERMS-OP,Adding like terms treated as multiplication,"Treated the two powers like added terms, so the 'two x's' became a coefficient of 2."
+NUM04,A,-8,0,EXP-NEG-EXP,Negative exponent makes the value negative,Believes a negative exponent makes the value negative.
+NUM04,B,-6,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Multiplied base and exponent: 2 · (-3).
+NUM04,C,1/8,1,,,
+NUM04,D,1/6,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Knows a reciprocal is involved but computed 2 · 3 instead of 2³.
+NUM05,A,2x/7,0,FRAC-ADD-ACROSS,Adds numerators and denominators,Added numerators and denominators separately.
+NUM05,B,x/7,0,FRAC-ADD-ACROSS,Adds numerators and denominators,Added the denominators and kept one numerator.
+NUM05,C,7x/12,1,,,
+NUM05,D,x²/12,0,FRAC-OP-SWAP,Uses the multiplication rule to add fractions,Used the multiplication rule (multiply across) for addition.
+LINF01,A,2,1,,,
+LINF01,B,1/2,0,SLOPE-INVERT,Slope computed as run over rise,Computed change in x over change in y.
+LINF01,C,-2,0,SLOPE-ORDER,Inconsistent order when subtracting coordinates,Subtracted the y-values and x-values in opposite orders.
+LINF01,D,8,0,SLOPE-INCOMPLETE,Slope as change in y only,Used only the change in y.
+LINF02,A,3,0,INTERCEPT-COEF,Reads the coefficient of x as the intercept,"Gave the coefficient of x, without knowing which number plays which role."
+LINF02,B,-4,1,,,
+LINF02,C,4,0,SIGN-DROP,Drops or mishandles a negative sign,Identified the right term but dropped its sign.
+LINF02,D,4/3,0,INTERCEPT-X,Confuses y-intercept with x-intercept,Found the x-intercept (where y = 0) instead.
+LINF03,A,The monthly starting fee,0,RATE-START-SWAP,Swaps the rate and the starting amount,Attached the 'fixed amount' meaning to the rate.
+LINF03,B,The total cost of m minutes,0,RATE-TOTAL,Rate confused with total,Confused a per-unit amount with an accumulated amount.
+LINF03,C,The number of minutes used,0,PARAM-VAR,Constant confused with variable,Confused a fixed parameter with the varying quantity.
+LINF03,D,"The cost of each minute, in dollars",1,,,
+LINF04,A,y = 3x + 7,0,SLOPE-SIGN,Ignores direction of change,Found the size of the change but not its direction (y decreases).
+LINF04,B,y = 7x - 3,0,RATE-START-SWAP,Swaps the rate and the starting amount,Swapped the starting value and the rate of change.
+LINF04,C,y = -3x + 7,1,,,
+LINF04,D,y = -3x,0,PROPORTIONAL-ALL,Every linear relationship treated as proportional,Assumed the relationship is proportional and ignored the starting value.
+LINF05,A,"Staying in one place, 3 km from home",1,,,
+LINF05,B,Walking along a flat road,0,GRAPH-PICTURE,Graph read as a picture of the situation,Read the shape of the graph as the shape of the road.
+LINF05,C,Moving at a constant speed of 3 km per hour,0,GRAPH-VARIABLE,Graph read as showing a different quantity,Read the distance graph as if it showed speed.
+LINF05,D,Travelling 3 km during that hour,0,RATE-TOTAL,Rate confused with total,Read the height of the graph (position) as distance travelled during the interval.
+FUNC01,A,5,0,EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",Read x² as 2x: 2 · 3 - 1.
+FUNC01,B,4,0,ORDER-OPS,Order of operations not applied to algebraic expressions,Subtracted before squaring: (3 - 1)².
+FUNC01,C,3x² - 3,0,FN-NOTATION,f(x) read as arithmetic on f,Read f(3) as '3 times the rule' instead of 'the output when the input is 3'.
+FUNC01,D,8,1,,,
+FUNC02,A,2x + 4,0,FN-SHIFT,f(x + 1) = f(x) + 1,Believes adding 1 to the input adds 1 to the output: f(x) + 1.
+FUNC02,B,2x + 5,1,,,
+FUNC02,C,2x² + 5x + 3,0,FN-NOTATION,f(x) read as arithmetic on f,"Multiplied the rule by (x + 1), reading the parentheses as multiplication."
+FUNC02,D,3x + 4,0,FN-NOTATION,f(x) read as arithmetic on f,Appended the input to the rule: f(x) + x + 1.
+FUNC03,A,"{(1, 4), (2, 4), (3, 4)}",1,,,
+FUNC03,B,"{(4, 1), (4, 2), (4, 3)}",0,FN-REVERSE,Input and output reversed,Checked that outputs don't repeat instead of checking inputs; may also reject A because its outputs repeat.
+FUNC03,C,x = y²,0,FN-EQUATION,Any equation is a function,Treats any equation as a function.
+FUNC03,D,The line x = 3,0,FN-LINE,Every straight line is a function,Believes every straight line is a function.
+FUNC04,A,All real numbers except 0,0,DOMAIN-ZERO,Zero is always excluded from the domain,Remembers 'no dividing by zero' as 'x cannot be zero'.
+FUNC04,B,All real numbers greater than 4,0,DOMAIN-POSITIVE,Domain restrictions borrowed from square roots,Borrowed the 'must be positive' restriction from square roots.
+FUNC04,C,All real numbers except 4,1,,,
+FUNC04,D,All real numbers except -4,0,SIGN-DROP,Drops or mishandles a negative sign,Solved x - 4 = 0 with a sign error.
+FUNC05,A,"When the input is 7, the output is 2.",0,FN-REVERSE,Input and output reversed,Reversed input and output.
+FUNC05,B,"When the input is 2, the output is 7.",1,,,
+FUNC05,C,"h times 2 equals 7, so h = 3.5.",0,FN-NOTATION,f(x) read as arithmetic on f,Read h(2) as multiplication.
+FUNC05,D,The rule for h is 'add 5'.,0,FN-SINGLEPOINT,Rule inferred from one input-output pair,Inferred a whole rule from a single input-output pair.
+MOD01,A,6S = P,0,MOD-REVERSAL,Students-and-professors reversal,"Wrote the symbols in word order; S and P are acting as labels, not numbers."
+MOD01,B,S = P + 6,0,MOD-ADDITIVE,Multiplicative comparison read as additive,Read 'six times as many' as 'six more than'.
+MOD01,C,S = 6P,1,,,
+MOD01,D,S · P = 6,0,MOD-KEYWORD,Keyword translation,Mapped 'times' to multiplying the two letters.
+MOD02,A,2n + 3,0,MOD-STRUCTURE,Word-order translation misses grouping,Translated word by word and missed the grouping implied by 'the sum'.
+MOD02,B,2 + n + 3,0,MOD-KEYWORD,Keyword translation,Read 'twice' as 'add 2'.
+MOD02,C,2 · n · 3,0,MOD-OP-SWAP,Operation word misread,Read 'sum' as multiplication.
+MOD02,D,2(n + 3),1,,,
+MOD03,A,1.2p,1,,,
+MOD03,B,p + 20,0,PCT-ABSOLUTE,Percent treated as an absolute amount,Treated 20% as an amount of 20 dollars.
+MOD03,C,0.2p,0,PCT-PART-ONLY,"Computes the change, not the new amount","Computed the increase, not the new price."
+MOD03,D,p / 1.2,0,PCT-DIRECTION,Percent change applied in the wrong direction,Sees the multiplicative structure but applied it in the wrong direction.
+MOD04,A,25 + 40d,0,RATE-START-SWAP,Swaps the rate and the starting amount,Swapped the fixed fee and the daily rate.
+MOD04,B,40 + 25d,1,,,
+MOD04,C,65d,0,VAR-CONJOIN,Conjoining unlike terms,Added the two amounts and attached d to the total.
+MOD04,D,40d + 25d,0,PROPORTIONAL-ALL,Every linear relationship treated as proportional,Applied 'per day' to both amounts.
+MOD05,A,3 - 2n,0,MOD-ORDER-SUB,"Reverses the order in ""less than""",Wrote the subtraction in word order.
+MOD05,B,2(n - 3),0,MOD-STRUCTURE,Word-order translation misses grouping,Placed the grouping on the wrong part of the phrase.
+MOD05,C,3 < 2n,0,MOD-KEYWORD,Keyword translation,Mapped the words 'less than' to the symbol <.
+MOD05,D,2n - 3,1,,,

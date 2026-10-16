@@ -1,0 +1,12 @@
+.env
+*.pem
+__pycache__/
+node_modules/
+calibration_output/
+my_results/
+*_responses*.csv
+!calibration/response_template.csv
+.DS_Store
+# submission kits stay private until accepted (journal blind review; conference call)
+article/
+session/

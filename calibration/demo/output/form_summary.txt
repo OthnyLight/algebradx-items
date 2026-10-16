@@ -1,0 +1,23 @@
+AlgebraDx calibration summary
+==================================
+
+Form A: n = 150, items = 20
+  mean score = 9.07   SD = 4.14
+  KR-20 reliability = 0.76   SEM = 2.03 points
+
+Form B: n = 150, items = 20
+  mean score = 6.90   SD = 3.64
+  KR-20 reliability = 0.71   SEM = 1.94 points
+
+How to read this
+- p_value: share of students answering correctly (difficulty; higher = easier).
+- discrimination_rpb: correlation of the item with the rest of the form. Above .30 is good,
+  .15-.30 acceptable, below .15 means the item is not separating stronger and weaker students.
+- rpb_A..D for wrong options should be negative. A positive value means stronger students
+  are choosing a wrong answer: re-read the item, the key, and the wording.
+- KR-20 near .70 or above is typical for a 20-item classroom diagnostic. The form is built to
+  diagnose misconceptions, so use subscores and codes, not only the total.
+- With fewer than about 100 students, treat every value as provisional.
+
+Privacy: this script runs locally and writes only to the output folder. Use local IDs,
+not student names, and keep outputs under your school's data policy.

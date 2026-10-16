@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these items, please cite them as below."
+type: dataset
+title: "AlgebraDx Open Diagnostic Item Bank for Algebra Readiness (Grades 9-12)"
+version: "1.0.0"
+date-released: "2026-10-10"
+authors:
+  - family-names: "Sa'anga"
+    given-names: "Othniel Iyassa"
+    orcid: "https://orcid.org/0009-0002-6113-6158"
+    affiliation: "Independent Researcher, Indianapolis, IN, USA"
+license: CC-BY-4.0
+abstract: >-
+  Forty original multiple-choice items for diagnosing algebra readiness in grades 9-12.
+  Every wrong answer is coded to one of 64 research-documented misconceptions and paired
+  with a teaching move and a probe question. Includes parallel forms, a teacher guide,
+  machine-readable exports and a local calibration kit. No student data collected.
+keywords:
+  - algebra
+  - diagnostic assessment
+  - misconceptions
+  - item bank
+  - distractor analysis
+  - mathematics education
+  - open educational resources

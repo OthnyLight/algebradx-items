@@ -1,0 +1,14 @@
+Design check
+==============================
+
+Form A: 36 codes appear; 10 have >= 2 opportunities (flaggable as a pattern)
+  flaggable: EQ-ONESIDE(2), EQ-TRANSPOSE(4), EXP-MULT(4), EXP-NEG-BASE(2), FN-NOTATION(2), LIKE-TERMS-OP(2), MOD-KEYWORD(2), SIGN-DROP(3), SIGN-SUB(2), VAR-CONJOIN(3)
+
+Form B: 40 codes appear; 9 have >= 2 opportunities (flaggable as a pattern)
+  flaggable: DIST-FIRST(2), EQ-TRANSPOSE(3), INV-OP(2), PROPORTIONAL-ALL(2), RATE-START-SWAP(3), RATE-TOTAL(2), VAR-CONJOIN(3), VAR-SPECIFIC(2), VAR-SURFACE(3)
+
+Simulation recovery (SYNTHETIC data; tests scoring logic, not students)
+  among flaggable codes: precision = 0.78, recall = 0.62 (TP 320, FP 88, FN 192)
+  Assumes a student holding a misconception picks its distractor 75% of the time;
+  real-world rates are unknown until local calibration.
+

@@ -1,0 +1,2862 @@
+{
+  "title": "AlgebraDx Open Diagnostic Item Bank",
+  "version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "authors": [
+    "Othniel Iyassa Sa'anga"
+  ],
+  "strands": {
+    "EQ": {
+      "name": "Equality and equivalence",
+      "why": "Students who read \"=\" as \"the answer comes next\" cannot reason about equivalent equations, which is the core move of all equation solving."
+    },
+    "VAR": {
+      "name": "Variables and expressions",
+      "why": "Algebra requires letters to stand for numbers that vary. Students who treat letters as labels or single unknowns stall when expressions must be compared or generalized."
+    },
+    "DIST": {
+      "name": "Distributive property and factoring",
+      "why": "Expanding and factoring are the transformations of algebra. Errors here (including over-applying \"linearity\") recur in every later course."
+    },
+    "LIN": {
+      "name": "Linear equations and inequalities",
+      "why": "Solving linear equations and inequalities is the gateway skill of Algebra I, and the place where move-it rules replace reasons."
+    },
+    "NUM": {
+      "name": "Integers, exponents and rational expressions",
+      "why": "Many \"algebra\" errors are number-sense errors in disguise, especially with negatives, exponents and fractions."
+    },
+    "LINF": {
+      "name": "Linear functions and rate of change",
+      "why": "Slope as a rate and the meaning of parameters in context connect symbols, tables and graphs, the bridge into functions."
+    },
+    "FUNC": {
+      "name": "Functions and notation",
+      "why": "Function notation and the definition of a function are new in high school, and misreadings (f(x) as multiplication) block Algebra II."
+    },
+    "MOD": {
+      "name": "Translating words into symbols",
+      "why": "Modeling requires moving from relationships described in words to symbols. Keyword strategies and word-order translation fail here."
+    }
+  },
+  "misconceptions": {
+    "EQ-OP": {
+      "name": "Equal sign as \"the answer comes next\"",
+      "strand": "EQ",
+      "reveals": "Reads \"=\" as a signal to compute, not as a statement that two sides have the same value. Equations become instructions read left to right.",
+      "move": "Use true/false and open number sentences with operations on both sides (8 + 4 = n + 5; 47 + 38 = 48 + 37). Ask students to justify without computing. Make \"is this statement true?\" the routine question before \"what is the answer?\"",
+      "probe": "Is 7 = 3 + 4 true? Is 3 + 4 = 4 + 3 true? Explain.",
+      "refs": [
+        "kieran1981",
+        "knuth2006",
+        "carpenter2003"
+      ]
+    },
+    "EQ-ONESIDE": {
+      "name": "Operation applied to only part of the equation",
+      "strand": "EQ",
+      "reveals": "Knows \"do something to get x alone\" but not that each step must keep both sides equal. Applies the step to the most visible term only.",
+      "move": "Pair each solving step with a check by substitution of the original solution into the new equation. If the new equation is false, the step broke equality. Use balance or tape diagrams for multi-term sides.",
+      "probe": "x = 5 solves 4x − 8 = 12. Does x = 5 solve x − 8 = 3? What went wrong?",
+      "refs": [
+        "kieran1981",
+        "booth2014"
+      ]
+    },
+    "EQ-TRANSPOSE": {
+      "name": "\"Move it to the other side\" without the inverse operation",
+      "strand": "EQ",
+      "reveals": "Has memorized a move rule (\"change sides\") without the reason (subtract from both sides). Sign is kept, or changed inconsistently, when a term crosses.",
+      "move": "Ban the word \"move\" for a week. Write the both-sides operation explicitly (−7 on each side) and show the incorrect and correct versions side by side. Ask students to explain why the incorrect one changes the solution.",
+      "probe": "Solve 7 − 2x = 15, writing the operation you apply to BOTH sides on each line.",
+      "refs": [
+        "booth2014",
+        "kirshner2004"
+      ]
+    },
+    "EQ-UNIQUE": {
+      "name": "Every equation has exactly one numerical solution",
+      "strand": "EQ",
+      "reveals": "Treats solving as producing a single number. Can't interpret 0 = 0 (identity) or 0 = 5 (contradiction), and may test a single value and stop.",
+      "move": "Sort equations into one / none / infinitely many solutions by substituting several values. Connect identities to \"these two expressions are equivalent\" from expression work.",
+      "probe": "Try x = 0, 1, 10 in 2(x + 3) = 2x + 6. What do you notice?",
+      "refs": [
+        "knuth2006"
+      ]
+    },
+    "EQ-BOTHSIDES": {
+      "name": "Unknown on both sides cannot be solved",
+      "strand": "EQ",
+      "reveals": "Solving is \"undo operations on the number until x is alone\". When x appears on both sides there is no starting point, so the student declares no solution.",
+      "move": "Present x on both sides as a balance. Removing the same x-amount from each side keeps it level. Start with cases where one side's x-term is a whole multiple of the other.",
+      "probe": "Is x = 5 a solution of 3(x − 2) = x + 4? Check it.",
+      "refs": [
+        "kieran1981"
+      ]
+    },
+    "VAR-CONJOIN": {
+      "name": "Conjoining unlike terms",
+      "strand": "VAR",
+      "reveals": "Expects an algebraic answer to be a single term (\"closure\"), so 2x + 3 becomes 5x or 7 − 2x becomes 5x.",
+      "move": "Substitution check. Evaluate 2x + 3 and 5x at x = 10 and compare. Use algebra tiles or \"3 apples + 2 bananas\" only as a bridge to the substitution check, not as the explanation; see VAR-LABEL.",
+      "probe": "Is 2x + 3 equal to 5x when x = 10? When x = 1? So are they equivalent?",
+      "refs": [
+        "booth1988",
+        "kuchemann1981"
+      ]
+    },
+    "VAR-CONCAT": {
+      "name": "Concatenation (3x with x = 6 read as 36)",
+      "strand": "VAR",
+      "reveals": "Brings the place-value meaning of juxtaposed digits into algebra, where juxtaposition means multiplication.",
+      "move": "Write the multiplication sign explicitly during substitution (3 · 6), then fade it. Contrast \"36\" and \"3x when x = 6\" in a worked example.",
+      "probe": "If x = 6, what is 3x? Write it with a multiplication sign.",
+      "refs": [
+        "booth1988",
+        "matz1982"
+      ]
+    },
+    "VAR-NOT-NUMBER": {
+      "name": "Letter treated as not standing for a number",
+      "strand": "VAR",
+      "reveals": "Ignores the letter or deletes it (\"4x − x = 4\"), treating x as a removable symbol rather than a quantity.",
+      "move": "Read every expression aloud as a quantity (\"four of x, take away one of x\"). Use tables of values to show what the expression produces as x changes.",
+      "probe": "Complete the table for 4x − x with x = 1, 2, 3. What pattern do you see?",
+      "refs": [
+        "kuchemann1981",
+        "booth1988"
+      ]
+    },
+    "VAR-LABEL": {
+      "name": "Letter as object or label (\"e for even\", \"a for apples\")",
+      "strand": "VAR",
+      "reveals": "Reads letters as abbreviations for things or properties rather than as numbers that vary.",
+      "move": "Insist on precise definitions (\"let a = the NUMBER of apples\"). Give items where the letter's initial is a trap (s for students vs. the number of students).",
+      "probe": "In 'let e be any even number', what kind of thing is e? Name three values it could be.",
+      "refs": [
+        "kuchemann1981",
+        "clement1982"
+      ]
+    },
+    "VAR-DIFFERENT": {
+      "name": "Different letters must have different values",
+      "strand": "VAR",
+      "reveals": "Believes distinct letters must name distinct numbers, so a + b + c = a + p + c \"can never\" be true.",
+      "move": "Have students find values that make the statement true, and values that make it false. Introduce \"always / sometimes / never\" as a routine with a required example for \"sometimes\".",
+      "probe": "Can b and p both equal 4? Try it in a + b + c = a + p + c.",
+      "refs": [
+        "kuchemann1981"
+      ]
+    },
+    "VAR-SURFACE": {
+      "name": "Judging by surface features of symbols",
+      "strand": "VAR",
+      "reveals": "Decides from appearance (\"it has a 2 so it is even\", \"multiplying makes bigger\", \"same letters on both sides so always true\") without reasoning about values.",
+      "move": "Counterexample hunts. For each claim, students test negative, zero, fractional and large values. Celebrate a single counterexample as a proof that \"always\" is false.",
+      "probe": "Is 2n always bigger than n + 2? Try n = 1 and n = −3.",
+      "refs": [
+        "kuchemann1981",
+        "booth2014"
+      ]
+    },
+    "VAR-SPECIFIC": {
+      "name": "Generalizing from a single example",
+      "strand": "VAR",
+      "reveals": "Tests one convenient value (often n = 2) and treats the result as a general truth. Doesn't yet see a variable as standing for all values at once.",
+      "move": "Require at least three test values chosen to break the claim (0, 1, a negative, a fraction). Then ask for a reason that holds for every value, not just the tested ones.",
+      "probe": "n + 2 was even when n = 2. Is it always even? Choose a value that tests it fairly.",
+      "refs": [
+        "kuchemann1981"
+      ]
+    },
+    "VAR-COEF-ADD": {
+      "name": "Coefficient read as addition (3x as 3 + x)",
+      "strand": "VAR",
+      "reveals": "Treats the coefficient as a separate number added to x, so \"undoing\" 3x means subtracting 3.",
+      "move": "Rewrite 3x as x + x + x and as 3 · x. Ask what single operation turns 3x back into x. Contrast with 3 + x.",
+      "probe": "If x = 5, what is 3x? What is 3 + x? Are they the same?",
+      "refs": [
+        "booth1988"
+      ]
+    },
+    "LIKE-TERMS-OP": {
+      "name": "Adding like terms treated as multiplication",
+      "strand": "VAR",
+      "reveals": "Confuses the rules for combining terms with the rules for multiplying them (3x + 5x → 15x or 8x², x + x → x²).",
+      "move": "Contrast pairs: 3x + 5x vs. 3x · 5x, x + x vs. x · x, each checked by substituting x = 2. Area model for products, length model for sums.",
+      "probe": "Evaluate 3x + 5x and 8x² at x = 2.",
+      "refs": [
+        "booth2014",
+        "matz1982"
+      ]
+    },
+    "DIST-FIRST": {
+      "name": "Distributes to the first term only",
+      "strand": "DIST",
+      "reveals": "Multiplies the term next to the coefficient and leaves the rest of the parentheses alone.",
+      "move": "Area model. A rectangle of width 4 and length x + 3 has two parts, so it has two products. Then use arrows from the factor to every term inside the parentheses, and fade them.",
+      "probe": "Draw a rectangle for 4(x + 3). How many pieces does it have?",
+      "refs": [
+        "matz1982",
+        "booth2014"
+      ]
+    },
+    "DIST-ADD": {
+      "name": "Adds the outside factor instead of multiplying",
+      "strand": "DIST",
+      "reveals": "Treats the factor outside the parentheses as joining by addition (4(x + 3) → 4x + 7).",
+      "move": "Read 4(x + 3) as \"four groups of (x + 3)\" and write the groups out once: (x + 3) + (x + 3) + (x + 3) + (x + 3).",
+      "probe": "Write 4(x + 3) as a sum of four groups. Now simplify.",
+      "refs": [
+        "booth1988"
+      ]
+    },
+    "DIST-NEG": {
+      "name": "Negative not distributed to every term",
+      "strand": "DIST",
+      "reveals": "Drops parentheses after a minus sign without changing every sign inside. Reads −(x − 3) as −x − 3.",
+      "move": "Rewrite the minus as −1 · ( ), then distribute. Check by substitution (x = 0 is a quick test: 10 − (0 − 3) = 13).",
+      "probe": "Evaluate 10 − (x − 3) at x = 0. Does your simplified form give the same?",
+      "refs": [
+        "vlassis2004",
+        "booth2014"
+      ]
+    },
+    "DIST-SQUARE": {
+      "name": "(a + b)² = a² + b² (linearity overgeneralization)",
+      "strand": "DIST",
+      "reveals": "Extends the distributive pattern to exponents, treating squaring as if it distributes over addition.",
+      "move": "Area model of a square with side x + 5 shows four regions, not two. Numeric check: (3 + 5)² = 64, but 3² + 5² = 34.",
+      "probe": "Is (3 + 5)² equal to 3² + 5²? Draw the square.",
+      "refs": [
+        "matz1982"
+      ]
+    },
+    "DIST-PARTIAL": {
+      "name": "Incomplete expansion (misses a cross term)",
+      "strand": "DIST",
+      "reveals": "Knows binomial products have more than two terms but tracks the partial products inconsistently.",
+      "move": "Use a 2×2 area grid (box method) for every binomial product until students record all four partial products reliably.",
+      "probe": "Fill in a 2×2 grid for (x + 5)(x + 5).",
+      "refs": [
+        "matz1982"
+      ]
+    },
+    "DIST-CANCEL": {
+      "name": "Cancelling across addition in a fraction",
+      "strand": "DIST",
+      "reveals": "Treats a common number in numerator and denominator as cancellable even when it is a term, not a factor.",
+      "move": "Factor first, then cancel: (3x + 6)/3 = 3(x + 2)/3. Numeric check: x = 1 gives 9/3 = 3, not 7.",
+      "probe": "Evaluate (3x + 6)/3 at x = 1. Does x + 6 give the same?",
+      "refs": [
+        "kirshner2004"
+      ]
+    },
+    "FACT-SQUARE": {
+      "name": "Difference of squares treated as a perfect square",
+      "strand": "DIST",
+      "reveals": "Matches the shape \"x² … 9\" to (x − 3)² without checking the middle term.",
+      "move": "Multiply back as a routine. Every factorization is checked by expanding. Contrast x² − 9 with x² − 6x + 9.",
+      "probe": "Expand (x − 3)². Is it x² − 9?",
+      "refs": [
+        "kirshner2004"
+      ]
+    },
+    "FACT-SUM-PRODUCT": {
+      "name": "Sum/product search misapplied",
+      "strand": "DIST",
+      "reveals": "Searches for factor pairs of the constant without matching the middle coefficient (here, zero).",
+      "move": "Make the coefficient of x explicit (x² + 0x − 9) before searching for the pair.",
+      "probe": "Rewrite x² − 9 with an x-term. What must the two numbers add to?",
+      "refs": [
+        "kirshner2004"
+      ]
+    },
+    "FACT-COMMON": {
+      "name": "Pulls out a factor that is not common to every term",
+      "strand": "DIST",
+      "reveals": "Factors x out of x² − 9 as if 9 contained x.",
+      "move": "Before factoring out, list each term's factors in a row and highlight only what is shared by all rows.",
+      "probe": "Expand x(x − 9). Is it x² − 9?",
+      "refs": [
+        "kirshner2004"
+      ]
+    },
+    "SIGN-DROP": {
+      "name": "Drops or mishandles a negative sign",
+      "strand": "NUM",
+      "reveals": "Loses the sign of a coefficient or result, especially when dividing (−2x = 8 → x = 4) or when solving x − 4 = 0.",
+      "move": "Circle each term together with the sign in front of it. Check every answer by substitution.",
+      "probe": "Substitute your answer into the original equation. Is it true?",
+      "refs": [
+        "vlassis2004"
+      ]
+    },
+    "SIGN-SUB": {
+      "name": "Errors with subtracting or multiplying negatives",
+      "strand": "NUM",
+      "reveals": "Treats −3 · (−2) as −6, or subtracting a negative as subtracting.",
+      "move": "Use a number line with direction for subtraction. Build the rule from patterns (3 · −2, 2 · −2, 1 · −2, 0 · −2, −1 · −2 …) rather than stating it.",
+      "probe": "Continue the pattern: 2 · (−2) = −4, 1 · (−2) = −2, 0 · (−2) = 0, (−1) · (−2) = ?",
+      "refs": [
+        "vlassis2004"
+      ]
+    },
+    "INV-OP": {
+      "name": "Wrong inverse operation",
+      "strand": "LIN",
+      "reveals": "Undoes an operation with the wrong inverse (undoes ÷3 by ÷3, or undoes ×r by −r).",
+      "move": "Arrow diagrams (\"x → ×3 → +2 → 17\") read forward, then undone backward with inverses written on the arrows.",
+      "probe": "Draw the arrow diagram for x/3 + 2 and undo it.",
+      "refs": [
+        "kieran1981"
+      ]
+    },
+    "INEQ-FLIP": {
+      "name": "Inequality direction not reversed after multiplying or dividing by a negative",
+      "strand": "LIN",
+      "reveals": "Solves inequalities exactly like equations. The ordering meaning of < is not connected to the steps.",
+      "move": "Test a value in the original inequality and in the \"answer\" (x = −5 makes −3x + 4 > 10 true; does x > −2 include −5?). Derive the flip from the number line, not as a rule.",
+      "probe": "Is x = −5 a solution of −3x + 4 > 10? Is it in your answer set?",
+      "refs": [
+        "booth2014"
+      ]
+    },
+    "FRAC-ORDER": {
+      "name": "Divides in the wrong order",
+      "strand": "LIN",
+      "reveals": "Knows division is needed but does not track which quantity is the dividend.",
+      "move": "Check with numbers. If d = 100 and r = 50, what must t be? Which expression gives 2?",
+      "probe": "d = 100, r = 50. Compute d/r and r/d. Which makes sense as a time?",
+      "refs": [
+        "kieran1981"
+      ]
+    },
+    "EXP-NEG-BASE": {
+      "name": "−a² read as (−a)²",
+      "strand": "NUM",
+      "reveals": "Applies the exponent to the negative sign. Order of operations with the unary minus is not secure.",
+      "move": "Read −3² aloud as \"the opposite of three squared\". Contrast −3² and (−3)² in a worked-example pair. Substitute negatives in parentheses, always.",
+      "probe": "Evaluate −3² and (−3)². Explain the difference in words.",
+      "refs": [
+        "cangelosi2013"
+      ]
+    },
+    "EXP-MULT": {
+      "name": "Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",
+      "strand": "NUM",
+      "reveals": "Reads the exponent as a factor rather than a count of repeated factors.",
+      "move": "Expand into repeated factors (x³ = x · x · x) every time until fluent. Contrast 2³ and 2 · 3.",
+      "probe": "Write 2³ and 3 · 2 as repeated operations. Are they equal?",
+      "refs": [
+        "cangelosi2013"
+      ]
+    },
+    "EXP-PRODUCT-MULT": {
+      "name": "Multiplies exponents when multiplying powers",
+      "strand": "NUM",
+      "reveals": "Confuses the product rule (add exponents) with the power rule (multiply exponents).",
+      "move": "Expand both: x³ · x⁴ is seven x's in a row, while (x³)⁴ is four groups of three. Derive both rules from expansion side by side.",
+      "probe": "Write x³ · x⁴ as repeated factors. Count the x's.",
+      "refs": [
+        "matz1982"
+      ]
+    },
+    "EXP-NEG-EXP": {
+      "name": "Negative exponent makes the value negative",
+      "strand": "NUM",
+      "reveals": "Associates the negative sign in the exponent with a negative result.",
+      "move": "Pattern table: 2³ = 8, 2² = 4, 2¹ = 2, 2⁰ = 1, 2⁻¹ = ½ … each step divides by 2.",
+      "probe": "Continue the pattern 8, 4, 2, 1, … for 2⁻¹, 2⁻², 2⁻³.",
+      "refs": [
+        "cangelosi2013"
+      ]
+    },
+    "ORDER-OPS": {
+      "name": "Order of operations not applied to algebraic expressions",
+      "strand": "NUM",
+      "reveals": "Applies operations in the order they are written, or subtracts before squaring.",
+      "move": "Rewrite each expression with explicit grouping before substitution. Ask \"what is the last operation?\" to identify the structure.",
+      "probe": "In x² − 1, what is the last operation performed?",
+      "refs": [
+        "kirshner2004"
+      ]
+    },
+    "FRAC-ADD-ACROSS": {
+      "name": "Adds numerators and denominators",
+      "strand": "NUM",
+      "reveals": "Adds fractions componentwise, so the meaning of a denominator as a unit size is not active.",
+      "move": "Numeric check (1/2 + 1/2 is not 2/4). Rewrite to a common denominator with the unit stated (\"thirds and quarters → twelfths\").",
+      "probe": "Is 1/2 + 1/2 equal to 2/4?",
+      "refs": [
+        "booth2014"
+      ]
+    },
+    "FRAC-OP-SWAP": {
+      "name": "Uses the multiplication rule to add fractions",
+      "strand": "NUM",
+      "reveals": "Applies the \"multiply across\" procedure regardless of the operation.",
+      "move": "Contrast pairs of addition and multiplication with the same fractions, checked by substituting x = 12.",
+      "probe": "With x = 12, evaluate x/3 + x/4 and (x/3)(x/4).",
+      "refs": [
+        "booth2014"
+      ]
+    },
+    "SLOPE-INVERT": {
+      "name": "Slope computed as run over rise",
+      "strand": "LINF",
+      "reveals": "Knows slope is a ratio of differences but not which difference is per which. The meaning \"change in y per 1 unit of x\" is not active.",
+      "move": "Define slope as a rate (\"how much y changes when x increases by 1\") and read it off a table before any formula.",
+      "probe": "When x goes up by 1, how much does y go up between (2, 5) and (6, 13)?",
+      "refs": [
+        "teuscher2010",
+        "leinhardt1990"
+      ]
+    },
+    "SLOPE-ORDER": {
+      "name": "Inconsistent order when subtracting coordinates",
+      "strand": "LINF",
+      "reveals": "Subtracts y-values in one order and x-values in the other, producing the wrong sign.",
+      "move": "Label points 1 and 2 and keep the same order in the numerator and denominator. Sketch the points first to predict the sign.",
+      "probe": "Before computing, does the line go up or down from left to right?",
+      "refs": [
+        "teuscher2010"
+      ]
+    },
+    "SLOPE-INCOMPLETE": {
+      "name": "Slope as change in y only",
+      "strand": "LINF",
+      "reveals": "Equates slope with how much y changes, ignoring the change in x.",
+      "move": "Compare two lines with the same rise and different runs. Ask which is steeper and why.",
+      "probe": "Two lines both rise 8. One runs 4, one runs 8. Same slope?",
+      "refs": [
+        "teuscher2010"
+      ]
+    },
+    "SLOPE-SIGN": {
+      "name": "Ignores direction of change",
+      "strand": "LINF",
+      "reveals": "Finds the size of the rate but not whether y increases or decreases.",
+      "move": "Before writing an equation from a table, students state \"as x goes up, y goes ___\" and check that the sign of the slope matches.",
+      "probe": "As x goes up in the table, does y go up or down?",
+      "refs": [
+        "leinhardt1990"
+      ]
+    },
+    "INTERCEPT-COEF": {
+      "name": "Reads the coefficient of x as the intercept",
+      "strand": "LINF",
+      "reveals": "Identifies \"the number in the equation\" without knowing which parameter plays which role.",
+      "move": "Evaluate the function at x = 0 and connect the result to the graph's crossing point.",
+      "probe": "What is y when x = 0 in y = 3x − 4?",
+      "refs": [
+        "leinhardt1990"
+      ]
+    },
+    "INTERCEPT-X": {
+      "name": "Confuses y-intercept with x-intercept",
+      "strand": "LINF",
+      "reveals": "Knows \"intercept\" means a crossing point but not which axis is meant.",
+      "move": "Graph and table together. The y-intercept is the row with x = 0, and the x-intercept is the row with y = 0.",
+      "probe": "Which row of a table shows the y-intercept?",
+      "refs": [
+        "leinhardt1990"
+      ]
+    },
+    "RATE-START-SWAP": {
+      "name": "Swaps the rate and the starting amount",
+      "strand": "LINF",
+      "reveals": "Recognizes a linear model has two parameters but attaches the meanings to the wrong numbers.",
+      "move": "In context, ask \"what does it cost for 0 days / minutes?\" and \"what changes each additional day?\" before writing anything. Annotate each number in the model with units (dollars, dollars per day).",
+      "probe": "How much would the rental cost for 0 days? For 1 day? For 2?",
+      "refs": [
+        "leinhardt1990"
+      ]
+    },
+    "RATE-TOTAL": {
+      "name": "Rate confused with total",
+      "strand": "LINF",
+      "reveals": "Does not distinguish a per-unit amount from an accumulated amount.",
+      "move": "Units analysis. Write the units of every term (0.10 dollars per minute × m minutes = dollars).",
+      "probe": "What are the units of 0.10 in C = 15 + 0.10m?",
+      "refs": [
+        "teuscher2010"
+      ]
+    },
+    "PARAM-VAR": {
+      "name": "Constant confused with variable",
+      "strand": "LINF",
+      "reveals": "Cannot separate the fixed numbers in a model from the quantity that varies.",
+      "move": "Vary the input in a table and ask which numbers in the formula changed and which stayed the same.",
+      "probe": "If m changes from 100 to 200, which numbers in C = 15 + 0.10m change?",
+      "refs": [
+        "kuchemann1981"
+      ]
+    },
+    "PROPORTIONAL-ALL": {
+      "name": "Every linear relationship treated as proportional",
+      "strand": "LINF",
+      "reveals": "Assumes y = mx and ignores the starting value.",
+      "move": "Check the x = 0 row of every table first. Contrast proportional and non-proportional tables side by side.",
+      "probe": "What is y when x = 0 in the table? What does y = −3x give at x = 0?",
+      "refs": [
+        "leinhardt1990"
+      ]
+    },
+    "GRAPH-PICTURE": {
+      "name": "Graph read as a picture of the situation",
+      "strand": "LINF",
+      "reveals": "Interprets the shape of the graph as the shape of the physical path (flat line = flat road).",
+      "move": "Have students act out graphs (walk to match a distance-time graph) and narrate. Always state \"the vertical axis shows ___\".",
+      "probe": "What does the vertical axis measure? What happens to that quantity from t = 1 to t = 2?",
+      "refs": [
+        "bell1981",
+        "leinhardt1990"
+      ]
+    },
+    "GRAPH-VARIABLE": {
+      "name": "Graph read as showing a different quantity",
+      "strand": "LINF",
+      "reveals": "Reads a distance-time graph as if it showed speed, so a flat segment means constant speed.",
+      "move": "Pair distance-time and speed-time graphs of the same trip, and match segments between them.",
+      "probe": "If the distance does not change for an hour, what is the speed?",
+      "refs": [
+        "bell1981",
+        "leinhardt1990"
+      ]
+    },
+    "FN-NOTATION": {
+      "name": "f(x) read as arithmetic on f",
+      "strand": "FUNC",
+      "reveals": "Treats f(3) as f × 3 or f(x + 1) as an operation on the rule, rather than as \"the output when the input is 3\".",
+      "move": "Use an input-output machine. Write f(□) = □² − 1 with a blank box, and substitute whatever goes in the box, including expressions.",
+      "probe": "f(x) = x² − 1. Fill in: f(□) = □² − 1. Now put 3 in the box.",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "FN-SHIFT": {
+      "name": "f(x + 1) = f(x) + 1",
+      "strand": "FUNC",
+      "reveals": "Thinks changing the input by 1 changes the output by 1. Input and output transformations are confused.",
+      "move": "Table of f(x) and f(x + 1) side by side for several x. Contrast f(x + 1) with f(x) + 1 numerically.",
+      "probe": "f(x) = 2x + 3. Compute f(2 + 1) and f(2) + 1.",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "FN-REVERSE": {
+      "name": "Input and output reversed",
+      "strand": "FUNC",
+      "reveals": "Reads h(2) = 7 as input 7, output 2. In definitions, checks repeated outputs instead of repeated inputs.",
+      "move": "Always label pairs as (input, output) and arrows input → output. Use \"one input, one output\" machine language.",
+      "probe": "In h(2) = 7, which number went into the machine?",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "FN-EQUATION": {
+      "name": "Any equation is a function",
+      "strand": "FUNC",
+      "reveals": "Equates \"function\" with \"has a formula\", rather than with each input having exactly one output.",
+      "move": "For x = y², ask \"if x = 4, what is y?\" and find two answers. Graph it and apply the definition directly.",
+      "probe": "In x = y², how many y-values go with x = 4?",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "FN-LINE": {
+      "name": "Every straight line is a function",
+      "strand": "FUNC",
+      "reveals": "Has generalized \"linear functions\" to \"all lines\", so the vertical line x = 3 is accepted.",
+      "move": "List points on x = 3 and check one-input-one-output directly.",
+      "probe": "Name three points on the line x = 3. What do their x-values have in common?",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "FN-SINGLEPOINT": {
+      "name": "Rule inferred from one input-output pair",
+      "strand": "FUNC",
+      "reveals": "Treats one data point as determining the whole function.",
+      "move": "Generate several different rules through the same point (2, 7). Discuss what extra information pins a function down.",
+      "probe": "Find two different rules with h(2) = 7.",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "DOMAIN-ZERO": {
+      "name": "Zero is always excluded from the domain",
+      "strand": "FUNC",
+      "reveals": "Remembers \"you can't divide by zero\" as \"x can't be zero\", rather than \"the denominator can't be zero\".",
+      "move": "Ask \"what input makes the denominator 0?\" and solve it explicitly.",
+      "probe": "What is f(0) for f(x) = 1/(x − 4)? Is it defined?",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "DOMAIN-POSITIVE": {
+      "name": "Domain restrictions borrowed from square roots",
+      "strand": "FUNC",
+      "reveals": "Applies a \"must be positive\" restriction from square-root functions to rational functions.",
+      "move": "Evaluate the function at inputs below the suspected boundary (f(0) = −1/4) to show they are defined.",
+      "probe": "Is f(0) defined for f(x) = 1/(x − 4)?",
+      "refs": [
+        "oehrtman2008"
+      ]
+    },
+    "MOD-REVERSAL": {
+      "name": "Students-and-professors reversal",
+      "strand": "MOD",
+      "reveals": "Writes symbols in word order (\"six times students… professors\" → 6S = P), treating letters as labels rather than numbers.",
+      "move": "Test with numbers. If there are 10 professors, how many students? Does the equation give that? Write the equation only after the numeric check.",
+      "probe": "If P = 10, what should S be? Does 6S = P give that?",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "MOD-ADDITIVE": {
+      "name": "Multiplicative comparison read as additive",
+      "strand": "MOD",
+      "reveals": "Interprets \"six times as many\" as \"six more than\".",
+      "move": "Contrast \"6 more than\" and \"6 times as many\" with bar models at two different sizes.",
+      "probe": "With 10 professors, how many students is '6 more than' and how many is '6 times as many'?",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "MOD-KEYWORD": {
+      "name": "Keyword translation",
+      "strand": "MOD",
+      "reveals": "Maps key words to operations or symbols (\"times\" → multiply the letters, \"less than\" → <, \"twice\" → +2) without modeling the relationship.",
+      "move": "Retire keyword charts. Have students describe the quantities and the relationship first, then test the expression with a number.",
+      "probe": "Pick a number for n. What is '3 less than twice n'? Does your expression give that?",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "MOD-STRUCTURE": {
+      "name": "Word-order translation misses grouping",
+      "strand": "MOD",
+      "reveals": "Translates phrase by phrase, so \"twice the sum of n and 3\" becomes 2n + 3, or the grouping is placed on the wrong part.",
+      "move": "Ask for the last operation in the phrase (\"twice the sum\" → the last operation is doubling) and build the expression from the outside in.",
+      "probe": "In 'twice the sum of n and 3', what is the last thing you do?",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "MOD-OP-SWAP": {
+      "name": "Operation word misread",
+      "strand": "MOD",
+      "reveals": "Interprets \"sum\" or \"plus\" as multiplication, or the reverse.",
+      "move": "Quick numeric translation drills (\"the sum of 4 and 3 is ___\") before introducing variables.",
+      "probe": "What is the sum of 4 and 3? The product?",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "MOD-ORDER-SUB": {
+      "name": "Reverses the order in \"less than\"",
+      "strand": "MOD",
+      "reveals": "Writes \"3 less than 2n\" as 3 − 2n, following word order.",
+      "move": "Numeric translation first (\"3 less than 10 is 7, so 10 − 3\"), then replace 10 by the expression.",
+      "probe": "What is 3 less than 10? Write the subtraction.",
+      "refs": [
+        "clement1982"
+      ]
+    },
+    "PCT-ABSOLUTE": {
+      "name": "Percent treated as an absolute amount",
+      "strand": "MOD",
+      "reveals": "Adds 20 (or 0.20) to the price rather than 20% of the price.",
+      "move": "Use a double number line with 100% = p and mark 120%. Check with p = $50.",
+      "probe": "If p = $50, what is the price after a 20% increase?",
+      "refs": [
+        "parker1995"
+      ]
+    },
+    "PCT-PART-ONLY": {
+      "name": "Computes the change, not the new amount",
+      "strand": "MOD",
+      "reveals": "Finds 20% of p correctly but reports the increase instead of the new total.",
+      "move": "Ask \"what does this expression give you, the increase or the new price?\" and annotate both.",
+      "probe": "With p = $50, what does 0.2p equal? Is that the new price?",
+      "refs": [
+        "parker1995"
+      ]
+    },
+    "PCT-DIRECTION": {
+      "name": "Percent change applied in the wrong direction",
+      "strand": "MOD",
+      "reveals": "Divides by 1.2 (undoing an increase) when it should multiply. Multiplicative structure is partly in place but the direction is lost.",
+      "move": "Estimate first. After an increase the new price must be larger. Check whether the expression gives a larger value.",
+      "probe": "Is p/1.2 bigger or smaller than p?",
+      "refs": [
+        "parker1995"
+      ]
+    }
+  },
+  "items": [
+    {
+      "id": "EQ01",
+      "strand": "EQ",
+      "skill": "Recognize equations that are equivalent to a given linear equation",
+      "ccss": [
+        "A-REI.A.1",
+        "8.EE.C.7"
+      ],
+      "naep_focus": "equations and inequalities - equivalent forms",
+      "difficulty": 1,
+      "stem": "Without solving, which equation has the same solution as 3x + 7 = 22?",
+      "options": {
+        "A": {
+          "text": "3x = 15",
+          "math": "3*x == 15"
+        },
+        "B": {
+          "text": "3x = 29",
+          "math": "3*x == 29"
+        },
+        "C": {
+          "text": "x + 7 = 19",
+          "math": "x + 7 == 19"
+        },
+        "D": {
+          "text": "3x + 7 = 15",
+          "math": "3*x + 7 == 15"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved +7 to the right side without changing its sign (22 + 7)."
+        },
+        "C": {
+          "code": "VAR-COEF-ADD",
+          "reveals": "Read 3x as 3 + x and 'removed' the 3 by subtracting it from 22."
+        },
+        "D": {
+          "code": "EQ-ONESIDE",
+          "reveals": "Subtracted 7 from the right side only, leaving +7 on the left."
+        }
+      },
+      "teaching_move": "Have students substitute x = 5 into each choice; an equation is equivalent only if the same value still makes it true. Then name the both-sides operation that produced the correct one.",
+      "check": {
+        "type": "equiv_solution",
+        "var": "x",
+        "original": "3*x + 7 == 22"
+      }
+    },
+    {
+      "id": "EQ02",
+      "strand": "EQ",
+      "skill": "Use the equal sign relationally (compare structure without computing)",
+      "ccss": [
+        "A-SSE.A.2",
+        "6.EE.A.4"
+      ],
+      "naep_focus": "variables, expressions and operations - equivalence and structure",
+      "difficulty": 1,
+      "stem": "Without adding, decide whether this statement is true or false: 47 + 38 = 48 + 37.",
+      "options": {
+        "A": {
+          "text": "False, because the numbers on the two sides are different.",
+          "math": null
+        },
+        "B": {
+          "text": "False, because 47 + 38 = 85, and 85 is not 48.",
+          "math": null
+        },
+        "C": {
+          "text": "True, because 48 is one more than 47 and 37 is one less than 38.",
+          "math": null
+        },
+        "D": {
+          "text": "You cannot tell without computing both sides.",
+          "math": null
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "VAR-SURFACE",
+          "reveals": "Judges equality by whether the symbols match rather than whether the values match."
+        },
+        "B": {
+          "code": "EQ-OP",
+          "reveals": "Reads '=' as 'the answer is next' and treats 48 as the result of 47 + 38."
+        },
+        "D": {
+          "code": "EQ-OP",
+          "reveals": "Can verify only by computing; does not yet use structure (compensation) to reason about equality."
+        }
+      },
+      "teaching_move": "Run a short true/false number-sentence routine (5 minutes, daily for a week) in which every statement must be justified without computing.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "C": "47 + 38 == 48 + 37 and 48 == 47 + 1 and 37 == 38 - 1",
+          "A": "47 + 38 != 48 + 37",
+          "B": "47 + 38 != 48 + 37"
+        }
+      }
+    },
+    {
+      "id": "EQ03",
+      "strand": "EQ",
+      "skill": "Choose a valid first step that preserves equality",
+      "ccss": [
+        "A-REI.A.1",
+        "A-REI.B.3"
+      ],
+      "naep_focus": "equations and inequalities - solving linear equations",
+      "difficulty": 2,
+      "stem": "Which of these is a correct first step for solving 4x - 8 = 12?",
+      "options": {
+        "A": {
+          "text": "x - 8 = 3",
+          "math": "x - 8 == 3"
+        },
+        "B": {
+          "text": "x - 2 = 3",
+          "math": "x - 2 == 3"
+        },
+        "C": {
+          "text": "4x = 4",
+          "math": "4*x == 4"
+        },
+        "D": {
+          "text": "x - 8 = 12",
+          "math": "x - 8 == 12"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "EQ-ONESIDE",
+          "reveals": "Divided 4x and 12 by 4 but not the 8; division is applied to the most visible terms, not to whole sides."
+        },
+        "C": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved -8 across as -8 (12 - 8) instead of adding 8 to both sides."
+        },
+        "D": {
+          "code": "EQ-ONESIDE",
+          "reveals": "Divided only the x-term by 4, so 'getting x alone' was done to one term."
+        }
+      },
+      "teaching_move": "Require a substitution check after each step: x = 5 solves the original, so it must solve every correct next line.",
+      "check": {
+        "type": "equiv_solution",
+        "var": "x",
+        "original": "4*x - 8 == 12"
+      }
+    },
+    {
+      "id": "EQ04",
+      "strand": "EQ",
+      "skill": "Collect variable terms from both sides of an equation",
+      "ccss": [
+        "A-REI.B.3",
+        "8.EE.C.7b"
+      ],
+      "naep_focus": "equations and inequalities - solving linear equations",
+      "difficulty": 2,
+      "stem": "Which equation is a correct next step for solving 5x + 3 = 2x + 15?",
+      "options": {
+        "A": {
+          "text": "7x + 3 = 15",
+          "math": "7*x + 3 == 15"
+        },
+        "B": {
+          "text": "5x + 3 = 17x",
+          "math": "5*x + 3 == 17*x"
+        },
+        "C": {
+          "text": "5x = 2x + 18",
+          "math": "5*x == 2*x + 18"
+        },
+        "D": {
+          "text": "3x + 3 = 15",
+          "math": "3*x + 3 == 15"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved 2x to the left keeping its sign, so the x-terms were added instead of subtracted."
+        },
+        "B": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Combined 2x + 15 into 17x, treating unlike terms as combinable."
+        },
+        "C": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved +3 to the right keeping its sign (15 + 3)."
+        }
+      },
+      "teaching_move": "Write the both-sides operation above each step (-2x on each side) and contrast with the 'move it' versions in a correct/incorrect worked-example pair.",
+      "check": {
+        "type": "equiv_solution",
+        "var": "x",
+        "original": "5*x + 3 == 2*x + 15"
+      }
+    },
+    {
+      "id": "EQ05",
+      "strand": "EQ",
+      "skill": "Interpret an identity (infinitely many solutions)",
+      "ccss": [
+        "A-REI.A.1",
+        "8.EE.C.7a"
+      ],
+      "naep_focus": "equations and inequalities - number of solutions",
+      "difficulty": 3,
+      "stem": "For which values of x is 2(x + 3) = 2x + 6 true?",
+      "options": {
+        "A": {
+          "text": "Only x = 0",
+          "math": null
+        },
+        "B": {
+          "text": "No values, because the x-terms cancel",
+          "math": null
+        },
+        "C": {
+          "text": "Every real number",
+          "math": null
+        },
+        "D": {
+          "text": "Only x = -3",
+          "math": null
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "EQ-UNIQUE",
+          "reveals": "Tested one convenient value and stopped, expecting exactly one solution."
+        },
+        "B": {
+          "code": "EQ-UNIQUE",
+          "reveals": "Reached 6 = 6 (or 0 = 0) and read the disappearance of x as 'no solution'."
+        },
+        "D": {
+          "code": "EQ-UNIQUE",
+          "reveals": "Looked for a single 'special' value by setting the parentheses to zero."
+        }
+      },
+      "teaching_move": "Substitute several values (0, 1, 10, -3) and record the results in a table; then sort a set of equations into one / none / infinitely many solutions.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "C": "ident('2*(x+3)', '2*x+6', ['x'])"
+        }
+      }
+    },
+    {
+      "id": "VAR01",
+      "strand": "VAR",
+      "skill": "Evaluate an expression with a coefficient by substitution",
+      "ccss": [
+        "6.EE.A.2c",
+        "A-SSE.A.1"
+      ],
+      "naep_focus": "variables, expressions and operations - evaluating expressions",
+      "difficulty": 1,
+      "stem": "If x = 6, what is the value of 4x - x?",
+      "options": {
+        "A": {
+          "text": "4",
+          "math": "4"
+        },
+        "B": {
+          "text": "18",
+          "math": "18"
+        },
+        "C": {
+          "text": "40",
+          "math": "40"
+        },
+        "D": {
+          "text": "3",
+          "math": "3"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "VAR-NOT-NUMBER",
+          "reveals": "Treated '- x' as deleting the letter, leaving 4; x is not acting as a quantity."
+        },
+        "C": {
+          "code": "VAR-CONCAT",
+          "reveals": "Read 4x with x = 6 as the two-digit number 46, then subtracted 6."
+        },
+        "D": {
+          "code": "VAR-NOT-NUMBER",
+          "reveals": "Simplified to 3x and then dropped the x (or treated it as 1)."
+        }
+      },
+      "teaching_move": "Write the multiplication sign during substitution (4 · 6 - 6), then fade it; read 4x - x aloud as 'four of x, take away one of x'.",
+      "check": {
+        "type": "value",
+        "answer": "4*x - x",
+        "at": {
+          "x": 6
+        }
+      }
+    },
+    {
+      "id": "VAR02",
+      "strand": "VAR",
+      "skill": "Combine like terms",
+      "ccss": [
+        "7.EE.A.1",
+        "A-SSE.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - equivalent expressions",
+      "difficulty": 1,
+      "stem": "Which expression is equivalent to 3x + 2 + 5x?",
+      "options": {
+        "A": {
+          "text": "8x + 2",
+          "math": "8*x + 2"
+        },
+        "B": {
+          "text": "10x",
+          "math": "10*x"
+        },
+        "C": {
+          "text": "15x + 2",
+          "math": "15*x + 2"
+        },
+        "D": {
+          "text": "8x² + 2",
+          "math": "8*x**2 + 2"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Added every number and attached one x; expects a single-term answer."
+        },
+        "C": {
+          "code": "LIKE-TERMS-OP",
+          "reveals": "Multiplied the coefficients 3 and 5 when combining like terms."
+        },
+        "D": {
+          "code": "LIKE-TERMS-OP",
+          "reveals": "Treated x + x as x², mixing the rules for adding and multiplying terms."
+        }
+      },
+      "teaching_move": "Evaluate the original and each choice at x = 10: equivalent expressions give equal values for every x.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "3*x + 2 + 5*x"
+      }
+    },
+    {
+      "id": "VAR03",
+      "strand": "VAR",
+      "skill": "Understand that different letters may take equal values",
+      "ccss": [
+        "6.EE.A.2",
+        "A-SSE.A.1"
+      ],
+      "naep_focus": "variables, expressions and operations - meaning of variables",
+      "difficulty": 2,
+      "stem": "Is a + b + c = a + p + c always true, never true, or sometimes true?",
+      "options": {
+        "A": {
+          "text": "Always true",
+          "math": null
+        },
+        "B": {
+          "text": "Never true, because b and p are different letters",
+          "math": null
+        },
+        "C": {
+          "text": "Sometimes true, when b = p",
+          "math": null
+        },
+        "D": {
+          "text": "Never true, because there are no numbers to check",
+          "math": null
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "VAR-SURFACE",
+          "reveals": "Matched the a's and c's on both sides and stopped looking."
+        },
+        "B": {
+          "code": "VAR-DIFFERENT",
+          "reveals": "Believes different letters must stand for different numbers."
+        },
+        "D": {
+          "code": "VAR-NOT-NUMBER",
+          "reveals": "Does not see letters as standing for numbers that can be tested."
+        }
+      },
+      "teaching_move": "Ask for values that make it true and values that make it false; establish the 'always / sometimes / never, with an example' routine.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "C": "sometimes('a+b+c', 'a+p+c', ['a','b','c','p'])",
+          "A": "always('a+b+c', 'a+p+c', ['a','b','c','p'])",
+          "B": "never('a+b+c', 'a+p+c', ['a','b','c','p'])"
+        }
+      }
+    },
+    {
+      "id": "VAR04",
+      "strand": "VAR",
+      "skill": "Represent a general property (evenness) with an expression",
+      "ccss": [
+        "A-SSE.A.1",
+        "A-CED.A.1"
+      ],
+      "naep_focus": "algebraic representations - expressions for general quantities",
+      "difficulty": 2,
+      "stem": "n can be any whole number. Which expression is ALWAYS an even number?",
+      "options": {
+        "A": {
+          "text": "n + 2",
+          "math": null
+        },
+        "B": {
+          "text": "e",
+          "math": null
+        },
+        "C": {
+          "text": "2n + 1",
+          "math": null
+        },
+        "D": {
+          "text": "2n",
+          "math": null
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "VAR-SPECIFIC",
+          "reveals": "Checked one even value of n (such as 2) and generalized."
+        },
+        "B": {
+          "code": "VAR-LABEL",
+          "reveals": "Used the letter as an abbreviation for the property 'even'."
+        },
+        "C": {
+          "code": "VAR-SURFACE",
+          "reveals": "Saw the 2 and concluded 'even' without reasoning about the + 1."
+        }
+      },
+      "teaching_move": "Counterexample hunt: for each choice, find a whole number n that makes it odd. Then ask why no such n exists for 2n.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "D": "all_int(lambda n: (2*n) % 2 == 0)",
+          "A": "all_int(lambda n: (n + 2) % 2 == 0)",
+          "C": "all_int(lambda n: (2*n + 1) % 2 == 0)"
+        }
+      }
+    },
+    {
+      "id": "VAR05",
+      "strand": "VAR",
+      "skill": "Compare expressions over all values of the variable",
+      "ccss": [
+        "A-SSE.A.1",
+        "A-REI.D.11"
+      ],
+      "naep_focus": "variables, expressions and operations - comparing expressions",
+      "difficulty": 3,
+      "stem": "Which is larger, 2n or n + 2?",
+      "options": {
+        "A": {
+          "text": "2n, because multiplying makes a number bigger",
+          "math": null
+        },
+        "B": {
+          "text": "They are equal",
+          "math": null
+        },
+        "C": {
+          "text": "n + 2, because adding 2 always gives more",
+          "math": null
+        },
+        "D": {
+          "text": "It depends on the value of n",
+          "math": null
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "VAR-SURFACE",
+          "reveals": "Applies 'multiplication makes bigger' without testing small or negative values."
+        },
+        "B": {
+          "code": "VAR-SPECIFIC",
+          "reveals": "Tested n = 2, where they are equal, and generalized."
+        },
+        "C": {
+          "code": "VAR-SPECIFIC",
+          "reveals": "Tested a small value such as n = 1 and generalized."
+        }
+      },
+      "teaching_move": "Table of values for n = -2, 0, 1, 2, 3, 10; graph both expressions and locate where they cross.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "D": "not all_num(lambda n: 2*n > n + 2) and not all_num(lambda n: n + 2 > 2*n)",
+          "A": "all_num(lambda n: 2*n > n + 2)",
+          "B": "all_num(lambda n: 2*n == n + 2)",
+          "C": "all_num(lambda n: n + 2 > 2*n)"
+        }
+      }
+    },
+    {
+      "id": "DIST01",
+      "strand": "DIST",
+      "skill": "Apply the distributive property to a binomial",
+      "ccss": [
+        "7.EE.A.1",
+        "A-SSE.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - equivalent expressions",
+      "difficulty": 1,
+      "stem": "Which expression is equivalent to 4(x + 3)?",
+      "options": {
+        "A": {
+          "text": "4x + 3",
+          "math": "4*x + 3"
+        },
+        "B": {
+          "text": "4x + 7",
+          "math": "4*x + 7"
+        },
+        "C": {
+          "text": "4x + 12",
+          "math": "4*x + 12"
+        },
+        "D": {
+          "text": "12x",
+          "math": "12*x"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "DIST-FIRST",
+          "reveals": "Multiplied only the first term inside the parentheses."
+        },
+        "B": {
+          "code": "DIST-ADD",
+          "reveals": "Added the 4 to the 3 instead of multiplying."
+        },
+        "D": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Multiplied the numbers and attached the x, producing a single term."
+        }
+      },
+      "teaching_move": "Area model: a 4 by (x + 3) rectangle has two regions, 4x and 12. Then 'four groups of (x + 3)' written out once.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "4*(x + 3)"
+      }
+    },
+    {
+      "id": "DIST02",
+      "strand": "DIST",
+      "skill": "Subtract a binomial (distribute a negative)",
+      "ccss": [
+        "7.EE.A.1",
+        "A-APR.A.1"
+      ],
+      "naep_focus": "variables, expressions and operations - operations with expressions",
+      "difficulty": 2,
+      "stem": "Which expression is equivalent to 10 - (x - 3)?",
+      "options": {
+        "A": {
+          "text": "13 - x",
+          "math": "13 - x"
+        },
+        "B": {
+          "text": "7 - x",
+          "math": "7 - x"
+        },
+        "C": {
+          "text": "13 + x",
+          "math": "13 + x"
+        },
+        "D": {
+          "text": "x - 13",
+          "math": "x - 13"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "DIST-NEG",
+          "reveals": "Dropped the parentheses without changing the sign of -3."
+        },
+        "C": {
+          "code": "DIST-NEG",
+          "reveals": "Changed the sign of the last term only; the negative was not distributed to x."
+        },
+        "D": {
+          "code": "SIGN-SUB",
+          "reveals": "Treated subtraction as if order did not matter, reversing the whole difference."
+        }
+      },
+      "teaching_move": "Rewrite as 10 + (-1)(x - 3) and distribute; check with x = 0 (the original gives 13).",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "10 - (x - 3)"
+      }
+    },
+    {
+      "id": "DIST03",
+      "strand": "DIST",
+      "skill": "Square a binomial",
+      "ccss": [
+        "A-APR.A.1",
+        "A-SSE.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - polynomial operations",
+      "difficulty": 2,
+      "stem": "Which expression is equivalent to (x + 5)²?",
+      "options": {
+        "A": {
+          "text": "x² + 25",
+          "math": "x**2 + 25"
+        },
+        "B": {
+          "text": "x² + 10x + 25",
+          "math": "x**2 + 10*x + 25"
+        },
+        "C": {
+          "text": "x² + 5x + 25",
+          "math": "x**2 + 5*x + 25"
+        },
+        "D": {
+          "text": "2x + 10",
+          "math": "2*x + 10"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "DIST-SQUARE",
+          "reveals": "Squared each term separately, extending distribution to exponents."
+        },
+        "C": {
+          "code": "DIST-PARTIAL",
+          "reveals": "Knows there is a middle term but recorded only one of the two cross products."
+        },
+        "D": {
+          "code": "EXP-MULT",
+          "reveals": "Read 'squared' as 'times 2'."
+        }
+      },
+      "teaching_move": "Draw the square with side x + 5 and label all four regions; numeric check: (3 + 5)² = 64, but 3² + 5² = 34.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "(x + 5)**2"
+      }
+    },
+    {
+      "id": "DIST04",
+      "strand": "DIST",
+      "skill": "Simplify a rational expression by factoring before cancelling",
+      "ccss": [
+        "A-SSE.A.2",
+        "A-APR.D.6"
+      ],
+      "naep_focus": "variables, expressions and operations - equivalent expressions",
+      "difficulty": 2,
+      "stem": "Which expression is equivalent to (3x + 6) / 3?",
+      "options": {
+        "A": {
+          "text": "x + 6",
+          "math": "x + 6"
+        },
+        "B": {
+          "text": "3x + 2",
+          "math": "3*x + 2"
+        },
+        "C": {
+          "text": "3x",
+          "math": "3*x"
+        },
+        "D": {
+          "text": "x + 2",
+          "math": "x + 2"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "DIST-CANCEL",
+          "reveals": "Cancelled the 3 in 3x with the denominator, leaving the 6 untouched."
+        },
+        "B": {
+          "code": "DIST-FIRST",
+          "reveals": "Divided only the constant term by 3."
+        },
+        "C": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Combined 3x + 6 into 9x, then divided."
+        }
+      },
+      "teaching_move": "Factor first, then cancel: 3(x + 2) / 3. Check at x = 1: the original gives 3.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "(3*x + 6) / 3"
+      }
+    },
+    {
+      "id": "DIST05",
+      "strand": "DIST",
+      "skill": "Factor a difference of squares",
+      "ccss": [
+        "A-SSE.A.2",
+        "A-SSE.B.3a"
+      ],
+      "naep_focus": "variables, expressions and operations - factoring",
+      "difficulty": 3,
+      "stem": "Which expression is a factored form of x² - 9?",
+      "options": {
+        "A": {
+          "text": "(x - 3)²",
+          "math": "(x - 3)**2"
+        },
+        "B": {
+          "text": "(x - 3)(x + 3)",
+          "math": "(x - 3)*(x + 3)"
+        },
+        "C": {
+          "text": "(x - 9)(x + 1)",
+          "math": "(x - 9)*(x + 1)"
+        },
+        "D": {
+          "text": "x(x - 9)",
+          "math": "x*(x - 9)"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "FACT-SQUARE",
+          "reveals": "Matched the shape 'x² and 9' to a perfect square without checking the middle term."
+        },
+        "C": {
+          "code": "FACT-SUM-PRODUCT",
+          "reveals": "Found factors of -9 without matching the x-coefficient (zero)."
+        },
+        "D": {
+          "code": "FACT-COMMON",
+          "reveals": "Factored out x as if every term contained x."
+        }
+      },
+      "teaching_move": "Multiply back every factorization; contrast x² - 9 with x² - 6x + 9 side by side.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "x**2 - 9"
+      }
+    },
+    {
+      "id": "LIN01",
+      "strand": "LIN",
+      "skill": "Solve a linear equation with a negative coefficient",
+      "ccss": [
+        "A-REI.B.3",
+        "8.EE.C.7b"
+      ],
+      "naep_focus": "equations and inequalities - solving linear equations",
+      "difficulty": 1,
+      "stem": "Solve 7 - 2x = 15.",
+      "options": {
+        "A": {
+          "text": "x = 4",
+          "math": "4"
+        },
+        "B": {
+          "text": "x = -11",
+          "math": "-11"
+        },
+        "C": {
+          "text": "x = 3",
+          "math": "3"
+        },
+        "D": {
+          "text": "x = -4",
+          "math": "-4"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "SIGN-DROP",
+          "reveals": "Reached -2x = 8 and divided by 2 instead of -2."
+        },
+        "B": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved 7 across keeping its sign (-2x = 22)."
+        },
+        "C": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Combined 7 - 2x into 5x."
+        }
+      },
+      "teaching_move": "Circle each term with its sign before solving; finish every solution with a substitution check in the original.",
+      "check": {
+        "type": "solves",
+        "var": "x",
+        "equation": "7 - 2*x == 15"
+      }
+    },
+    {
+      "id": "LIN02",
+      "strand": "LIN",
+      "skill": "Solve a linear inequality requiring division by a negative",
+      "ccss": [
+        "A-REI.B.3"
+      ],
+      "naep_focus": "equations and inequalities - solving linear inequalities",
+      "difficulty": 2,
+      "stem": "Solve -3x + 4 > 10.",
+      "options": {
+        "A": {
+          "text": "x < -2",
+          "math": "x < -2"
+        },
+        "B": {
+          "text": "x > -2",
+          "math": "x > -2"
+        },
+        "C": {
+          "text": "x > 2",
+          "math": "x > 2"
+        },
+        "D": {
+          "text": "x < -14/3",
+          "math": "x < Fraction(-14, 3)"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "INEQ-FLIP",
+          "reveals": "Solved exactly as an equation; did not reverse the inequality after dividing by -3."
+        },
+        "C": {
+          "code": "SIGN-DROP",
+          "reveals": "Dropped the negative coefficient (3x > 6), so no reversal seemed necessary."
+        },
+        "D": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Reversed correctly but moved +4 across keeping its sign (-3x > 14)."
+        }
+      },
+      "teaching_move": "Test a value (x = -5) in the original and in the proposed answer; derive the reversal from the number line rather than as a rule.",
+      "check": {
+        "type": "ineq",
+        "var": "x",
+        "original": "-3*x + 4 > 10"
+      }
+    },
+    {
+      "id": "LIN03",
+      "strand": "LIN",
+      "skill": "Solve a two-step equation involving division",
+      "ccss": [
+        "A-REI.B.3",
+        "7.EE.B.4a"
+      ],
+      "naep_focus": "equations and inequalities - solving linear equations",
+      "difficulty": 1,
+      "stem": "Solve x/3 + 2 = 5.",
+      "options": {
+        "A": {
+          "text": "x = 1",
+          "math": "1"
+        },
+        "B": {
+          "text": "x = 13",
+          "math": "13"
+        },
+        "C": {
+          "text": "x = 9",
+          "math": "9"
+        },
+        "D": {
+          "text": "x = 21",
+          "math": "21"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "INV-OP",
+          "reveals": "Undid division by 3 by dividing by 3 again."
+        },
+        "B": {
+          "code": "EQ-ONESIDE",
+          "reveals": "Multiplied x/3 and 5 by 3 but not the 2."
+        },
+        "D": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved +2 across keeping its sign (x/3 = 7)."
+        }
+      },
+      "teaching_move": "Arrow diagram: x -> divide by 3 -> add 2 -> 5, then undo backwards with the inverse written on each arrow.",
+      "check": {
+        "type": "solves",
+        "var": "x",
+        "equation": "x/3 + 2 == 5"
+      }
+    },
+    {
+      "id": "LIN04",
+      "strand": "LIN",
+      "skill": "Solve an equation with parentheses and the variable on both sides",
+      "ccss": [
+        "A-REI.B.3",
+        "8.EE.C.7b"
+      ],
+      "naep_focus": "equations and inequalities - solving linear equations",
+      "difficulty": 2,
+      "stem": "Solve 3(x - 2) = x + 4.",
+      "options": {
+        "A": {
+          "text": "x = 3",
+          "math": "3"
+        },
+        "B": {
+          "text": "x = 5",
+          "math": "5"
+        },
+        "C": {
+          "text": "x = 5/2",
+          "math": "Fraction(5, 2)"
+        },
+        "D": {
+          "text": "There is no solution, because x is on both sides.",
+          "math": null
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "DIST-FIRST",
+          "reveals": "Expanded 3(x - 2) as 3x - 2."
+        },
+        "C": {
+          "code": "EQ-TRANSPOSE",
+          "reveals": "Moved x to the left keeping its sign (3x + x = 10)."
+        },
+        "D": {
+          "code": "EQ-BOTHSIDES",
+          "reveals": "Believes an unknown on both sides cannot be solved."
+        }
+      },
+      "teaching_move": "Balance model: removing x from both sides keeps the balance level; check the solution by substituting into the original.",
+      "check": {
+        "type": "solves",
+        "var": "x",
+        "equation": "3*(x - 2) == x + 4"
+      }
+    },
+    {
+      "id": "LIN05",
+      "strand": "LIN",
+      "skill": "Solve a literal equation for a variable",
+      "ccss": [
+        "A-CED.A.4"
+      ],
+      "naep_focus": "equations and inequalities - formulas and literal equations",
+      "difficulty": 2,
+      "stem": "The formula d = rt relates distance, rate and time. Which expression gives t?",
+      "options": {
+        "A": {
+          "text": "t = d / r",
+          "math": "d / r"
+        },
+        "B": {
+          "text": "t = dr",
+          "math": "d * r"
+        },
+        "C": {
+          "text": "t = d - r",
+          "math": "d - r"
+        },
+        "D": {
+          "text": "t = r / d",
+          "math": "r / d"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "INV-OP",
+          "reveals": "Moved r to the other side keeping the operation (multiplication) instead of inverting it."
+        },
+        "C": {
+          "code": "INV-OP",
+          "reveals": "Undid multiplication by subtracting."
+        },
+        "D": {
+          "code": "FRAC-ORDER",
+          "reveals": "Knows division is needed but divided in the wrong order."
+        }
+      },
+      "teaching_move": "Check with numbers: d = 100 km, r = 50 km/h must give t = 2 h. Which expression gives 2?",
+      "check": {
+        "type": "literal",
+        "equation": "d == r*t",
+        "solve_for": "t",
+        "vars": [
+          "d",
+          "r"
+        ]
+      }
+    },
+    {
+      "id": "NUM01",
+      "strand": "NUM",
+      "skill": "Apply order of operations with a negative sign and an exponent",
+      "ccss": [
+        "8.EE.A.1",
+        "N-RN.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - order of operations with exponents",
+      "difficulty": 2,
+      "stem": "What is the value of -3²?",
+      "options": {
+        "A": {
+          "text": "9",
+          "math": "9"
+        },
+        "B": {
+          "text": "-9",
+          "math": "-9"
+        },
+        "C": {
+          "text": "-6",
+          "math": "-6"
+        },
+        "D": {
+          "text": "6",
+          "math": "6"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "EXP-NEG-BASE",
+          "reveals": "Squared -3 as a whole: (-3)² instead of -(3²)."
+        },
+        "C": {
+          "code": "EXP-MULT",
+          "reveals": "Read the exponent as multiplication: -3 · 2."
+        },
+        "D": {
+          "code": "EXP-MULT",
+          "reveals": "Read the exponent as multiplication and also took the negative as part of the base."
+        }
+      },
+      "teaching_move": "Read -3² aloud as 'the opposite of three squared'; contrast -3² and (-3)² as a worked-example pair.",
+      "check": {
+        "type": "value",
+        "answer": "-3**2"
+      }
+    },
+    {
+      "id": "NUM02",
+      "strand": "NUM",
+      "skill": "Substitute a negative value into a polynomial expression",
+      "ccss": [
+        "6.EE.A.2c",
+        "7.NS.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - evaluating expressions",
+      "difficulty": 2,
+      "stem": "If x = -2, what is the value of x² - 3x?",
+      "options": {
+        "A": {
+          "text": "-2",
+          "math": "-2"
+        },
+        "B": {
+          "text": "2",
+          "math": "2"
+        },
+        "C": {
+          "text": "-10",
+          "math": "-10"
+        },
+        "D": {
+          "text": "10",
+          "math": "10"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "SIGN-SUB",
+          "reveals": "Computed -3 · (-2) as -6, giving 4 - 6."
+        },
+        "B": {
+          "code": "EXP-NEG-BASE",
+          "reveals": "Substituted without parentheses so x² became -2² = -4, giving -4 + 6."
+        },
+        "C": {
+          "code": "EXP-NEG-BASE",
+          "reveals": "Both errors: x² as -4 and -3x as -6."
+        }
+      },
+      "teaching_move": "Always substitute negatives inside parentheses: (-2)² - 3(-2). Build the sign rule for multiplication from a pattern.",
+      "check": {
+        "type": "value",
+        "answer": "x**2 - 3*x",
+        "at": {
+          "x": -2
+        }
+      }
+    },
+    {
+      "id": "NUM03",
+      "strand": "NUM",
+      "skill": "Multiply powers with the same base",
+      "ccss": [
+        "8.EE.A.1",
+        "A-SSE.A.2"
+      ],
+      "naep_focus": "variables, expressions and operations - properties of exponents",
+      "difficulty": 1,
+      "stem": "Which expression is equivalent to x³ · x⁴?",
+      "options": {
+        "A": {
+          "text": "x⁷",
+          "math": "x**7"
+        },
+        "B": {
+          "text": "x¹²",
+          "math": "x**12"
+        },
+        "C": {
+          "text": "12x²",
+          "math": "12*x**2"
+        },
+        "D": {
+          "text": "2x⁷",
+          "math": "2*x**7"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "EXP-PRODUCT-MULT",
+          "reveals": "Multiplied the exponents (power rule) instead of adding them."
+        },
+        "C": {
+          "code": "EXP-MULT",
+          "reveals": "Read x³ as 3x and x⁴ as 4x, then multiplied."
+        },
+        "D": {
+          "code": "LIKE-TERMS-OP",
+          "reveals": "Treated the two powers like added terms, so the 'two x's' became a coefficient of 2."
+        }
+      },
+      "teaching_move": "Expand both as repeated factors and count; derive the product rule and the power rule side by side.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "x**3 * x**4"
+      }
+    },
+    {
+      "id": "NUM04",
+      "strand": "NUM",
+      "skill": "Evaluate a power with a negative exponent",
+      "ccss": [
+        "8.EE.A.1",
+        "N-RN.A.1"
+      ],
+      "naep_focus": "variables, expressions and operations - properties of exponents",
+      "difficulty": 2,
+      "stem": "What is the value of 2⁻³?",
+      "options": {
+        "A": {
+          "text": "-8",
+          "math": "-8"
+        },
+        "B": {
+          "text": "-6",
+          "math": "-6"
+        },
+        "C": {
+          "text": "1/8",
+          "math": "Fraction(1, 8)"
+        },
+        "D": {
+          "text": "1/6",
+          "math": "Fraction(1, 6)"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "EXP-NEG-EXP",
+          "reveals": "Believes a negative exponent makes the value negative."
+        },
+        "B": {
+          "code": "EXP-MULT",
+          "reveals": "Multiplied base and exponent: 2 · (-3)."
+        },
+        "D": {
+          "code": "EXP-MULT",
+          "reveals": "Knows a reciprocal is involved but computed 2 · 3 instead of 2³."
+        }
+      },
+      "teaching_move": "Pattern table: 2³ = 8, 2² = 4, 2¹ = 2, 2⁰ = 1 ... each step divides by 2; continue to 2⁻³.",
+      "check": {
+        "type": "value",
+        "answer": "Fraction(2)**-3"
+      }
+    },
+    {
+      "id": "NUM05",
+      "strand": "NUM",
+      "skill": "Add algebraic fractions with unlike denominators",
+      "ccss": [
+        "A-APR.D.6",
+        "7.NS.A.1"
+      ],
+      "naep_focus": "variables, expressions and operations - operations with rational expressions",
+      "difficulty": 3,
+      "stem": "Which expression is equivalent to x/3 + x/4?",
+      "options": {
+        "A": {
+          "text": "2x/7",
+          "math": "2*x/7"
+        },
+        "B": {
+          "text": "x/7",
+          "math": "x/7"
+        },
+        "C": {
+          "text": "7x/12",
+          "math": "7*x/12"
+        },
+        "D": {
+          "text": "x²/12",
+          "math": "x**2/12"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "FRAC-ADD-ACROSS",
+          "reveals": "Added numerators and denominators separately."
+        },
+        "B": {
+          "code": "FRAC-ADD-ACROSS",
+          "reveals": "Added the denominators and kept one numerator."
+        },
+        "D": {
+          "code": "FRAC-OP-SWAP",
+          "reveals": "Used the multiplication rule (multiply across) for addition."
+        }
+      },
+      "teaching_move": "Check at x = 12 (4 + 3 = 7); rewrite with the unit stated: thirds and quarters become twelfths.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "x/3 + x/4"
+      }
+    },
+    {
+      "id": "LINF01",
+      "strand": "LINF",
+      "skill": "Compute slope from two points",
+      "ccss": [
+        "8.EE.B.6",
+        "F-IF.B.6"
+      ],
+      "naep_focus": "patterns, relations and functions - rate of change",
+      "difficulty": 1,
+      "stem": "What is the slope of the line through (2, 5) and (6, 13)?",
+      "options": {
+        "A": {
+          "text": "2",
+          "math": "2"
+        },
+        "B": {
+          "text": "1/2",
+          "math": "Fraction(1, 2)"
+        },
+        "C": {
+          "text": "-2",
+          "math": "-2"
+        },
+        "D": {
+          "text": "8",
+          "math": "8"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "SLOPE-INVERT",
+          "reveals": "Computed change in x over change in y."
+        },
+        "C": {
+          "code": "SLOPE-ORDER",
+          "reveals": "Subtracted the y-values and x-values in opposite orders."
+        },
+        "D": {
+          "code": "SLOPE-INCOMPLETE",
+          "reveals": "Used only the change in y."
+        }
+      },
+      "teaching_move": "Define slope as 'change in y when x increases by 1' and read it from a table before using the formula; sketch the points to predict the sign.",
+      "check": {
+        "type": "value",
+        "answer": "Fraction(13 - 5, 6 - 2)"
+      }
+    },
+    {
+      "id": "LINF02",
+      "strand": "LINF",
+      "skill": "Identify the y-intercept from slope-intercept form",
+      "ccss": [
+        "8.F.B.4",
+        "F-IF.C.7a"
+      ],
+      "naep_focus": "algebraic representations - linear equations and graphs",
+      "difficulty": 1,
+      "stem": "What is the y-intercept of the line y = 3x - 4?",
+      "options": {
+        "A": {
+          "text": "3",
+          "math": "3"
+        },
+        "B": {
+          "text": "-4",
+          "math": "-4"
+        },
+        "C": {
+          "text": "4",
+          "math": "4"
+        },
+        "D": {
+          "text": "4/3",
+          "math": "Fraction(4, 3)"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "INTERCEPT-COEF",
+          "reveals": "Gave the coefficient of x, without knowing which number plays which role."
+        },
+        "C": {
+          "code": "SIGN-DROP",
+          "reveals": "Identified the right term but dropped its sign."
+        },
+        "D": {
+          "code": "INTERCEPT-X",
+          "reveals": "Found the x-intercept (where y = 0) instead."
+        }
+      },
+      "teaching_move": "Evaluate at x = 0 and connect the result to where the graph crosses the y-axis.",
+      "check": {
+        "type": "value",
+        "answer": "3*0 - 4"
+      }
+    },
+    {
+      "id": "LINF03",
+      "strand": "LINF",
+      "skill": "Interpret the rate of change of a linear model in context",
+      "ccss": [
+        "F-LE.B.5",
+        "8.F.B.4"
+      ],
+      "naep_focus": "patterns, relations and functions - interpreting linear models",
+      "difficulty": 2,
+      "stem": "A phone plan costs C = 15 + 0.10m dollars for m minutes of calls. What does 0.10 represent?",
+      "options": {
+        "A": {
+          "text": "The monthly starting fee",
+          "math": null
+        },
+        "B": {
+          "text": "The total cost of m minutes",
+          "math": null
+        },
+        "C": {
+          "text": "The number of minutes used",
+          "math": null
+        },
+        "D": {
+          "text": "The cost of each minute, in dollars",
+          "math": null
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "RATE-START-SWAP",
+          "reveals": "Attached the 'fixed amount' meaning to the rate."
+        },
+        "B": {
+          "code": "RATE-TOTAL",
+          "reveals": "Confused a per-unit amount with an accumulated amount."
+        },
+        "C": {
+          "code": "PARAM-VAR",
+          "reveals": "Confused a fixed parameter with the varying quantity."
+        }
+      },
+      "teaching_move": "Write the units of every term (0.10 dollars per minute × m minutes = dollars); compute C(0), C(1), C(2) and ask what changes.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "D": "(15 + Fraction('0.10')*1) - (15 + Fraction('0.10')*0) == Fraction('0.10')"
+        }
+      }
+    },
+    {
+      "id": "LINF04",
+      "strand": "LINF",
+      "skill": "Write a linear equation from a table",
+      "ccss": [
+        "8.F.B.4",
+        "F-LE.A.2"
+      ],
+      "naep_focus": "algebraic representations - translating between tables and equations",
+      "difficulty": 2,
+      "stem": "The table shows values of a linear function: x = 0, 1, 2, 3 gives y = 7, 4, 1, -2. Which equation fits the table?",
+      "options": {
+        "A": {
+          "text": "y = 3x + 7",
+          "math": "3*x + 7"
+        },
+        "B": {
+          "text": "y = 7x - 3",
+          "math": "7*x - 3"
+        },
+        "C": {
+          "text": "y = -3x + 7",
+          "math": "-3*x + 7"
+        },
+        "D": {
+          "text": "y = -3x",
+          "math": "-3*x"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "SLOPE-SIGN",
+          "reveals": "Found the size of the change but not its direction (y decreases)."
+        },
+        "B": {
+          "code": "RATE-START-SWAP",
+          "reveals": "Swapped the starting value and the rate of change."
+        },
+        "D": {
+          "code": "PROPORTIONAL-ALL",
+          "reveals": "Assumed the relationship is proportional and ignored the starting value."
+        }
+      },
+      "teaching_move": "Before writing any equation, state 'when x = 0, y = __' and 'as x goes up 1, y goes __ by __'.",
+      "check": {
+        "type": "table",
+        "var": "x",
+        "points": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            -2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "LINF05",
+      "strand": "LINF",
+      "skill": "Interpret a segment of a distance-time graph",
+      "ccss": [
+        "F-IF.B.4",
+        "8.F.B.5"
+      ],
+      "naep_focus": "patterns, relations and functions - interpreting graphs in context",
+      "difficulty": 2,
+      "stem": "A graph shows Maya's distance from home, d (km), against time, t (hours). From t = 1 to t = 2 the graph is a horizontal segment at d = 3. What was Maya doing during that hour?",
+      "options": {
+        "A": {
+          "text": "Staying in one place, 3 km from home",
+          "math": null
+        },
+        "B": {
+          "text": "Walking along a flat road",
+          "math": null
+        },
+        "C": {
+          "text": "Moving at a constant speed of 3 km per hour",
+          "math": null
+        },
+        "D": {
+          "text": "Travelling 3 km during that hour",
+          "math": null
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "GRAPH-PICTURE",
+          "reveals": "Read the shape of the graph as the shape of the road."
+        },
+        "C": {
+          "code": "GRAPH-VARIABLE",
+          "reveals": "Read the distance graph as if it showed speed."
+        },
+        "D": {
+          "code": "RATE-TOTAL",
+          "reveals": "Read the height of the graph (position) as distance travelled during the interval."
+        }
+      },
+      "teaching_move": "Act out distance-time graphs with a walk and narrate each segment; always state what the vertical axis measures.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "A": "Fraction(3 - 3, 2 - 1) == 0",
+          "C": "Fraction(3 - 3, 2 - 1) == 3",
+          "D": "3 - 3 == 3"
+        }
+      }
+    },
+    {
+      "id": "FUNC01",
+      "strand": "FUNC",
+      "skill": "Evaluate a function given in function notation",
+      "ccss": [
+        "F-IF.A.2"
+      ],
+      "naep_focus": "patterns, relations and functions - function notation",
+      "difficulty": 1,
+      "stem": "If f(x) = x² - 1, what is f(3)?",
+      "options": {
+        "A": {
+          "text": "5",
+          "math": "5"
+        },
+        "B": {
+          "text": "4",
+          "math": "4"
+        },
+        "C": {
+          "text": "3x² - 3",
+          "math": null
+        },
+        "D": {
+          "text": "8",
+          "math": "8"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "EXP-MULT",
+          "reveals": "Read x² as 2x: 2 · 3 - 1."
+        },
+        "B": {
+          "code": "ORDER-OPS",
+          "reveals": "Subtracted before squaring: (3 - 1)²."
+        },
+        "C": {
+          "code": "FN-NOTATION",
+          "reveals": "Read f(3) as '3 times the rule' instead of 'the output when the input is 3'."
+        }
+      },
+      "teaching_move": "Write f(□) = □² - 1 with an empty box and put the input in every box.",
+      "check": {
+        "type": "value",
+        "answer": "3**2 - 1"
+      }
+    },
+    {
+      "id": "FUNC02",
+      "strand": "FUNC",
+      "skill": "Evaluate a function at an expression input",
+      "ccss": [
+        "F-IF.A.2",
+        "F-BF.B.3"
+      ],
+      "naep_focus": "patterns, relations and functions - function notation",
+      "difficulty": 3,
+      "stem": "If f(x) = 2x + 3, which expression is equal to f(x + 1)?",
+      "options": {
+        "A": {
+          "text": "2x + 4",
+          "math": "2*x + 4"
+        },
+        "B": {
+          "text": "2x + 5",
+          "math": "2*x + 5"
+        },
+        "C": {
+          "text": "2x² + 5x + 3",
+          "math": "2*x**2 + 5*x + 3"
+        },
+        "D": {
+          "text": "3x + 4",
+          "math": "3*x + 4"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "FN-SHIFT",
+          "reveals": "Believes adding 1 to the input adds 1 to the output: f(x) + 1."
+        },
+        "C": {
+          "code": "FN-NOTATION",
+          "reveals": "Multiplied the rule by (x + 1), reading the parentheses as multiplication."
+        },
+        "D": {
+          "code": "FN-NOTATION",
+          "reveals": "Appended the input to the rule: f(x) + x + 1."
+        }
+      },
+      "teaching_move": "Table of f(x) and f(x + 1) for x = 0, 1, 2; compare f(2 + 1) with f(2) + 1 numerically.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "x"
+        ],
+        "target": "2*(x + 1) + 3"
+      }
+    },
+    {
+      "id": "FUNC03",
+      "strand": "FUNC",
+      "skill": "Apply the definition of a function",
+      "ccss": [
+        "F-IF.A.1",
+        "8.F.A.1"
+      ],
+      "naep_focus": "patterns, relations and functions - definition of function",
+      "difficulty": 2,
+      "stem": "In which choice is y a function of x?",
+      "options": {
+        "A": {
+          "text": "{(1, 4), (2, 4), (3, 4)}",
+          "math": null
+        },
+        "B": {
+          "text": "{(4, 1), (4, 2), (4, 3)}",
+          "math": null
+        },
+        "C": {
+          "text": "x = y²",
+          "math": null
+        },
+        "D": {
+          "text": "The line x = 3",
+          "math": null
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "FN-REVERSE",
+          "reveals": "Checked that outputs don't repeat instead of checking inputs; may also reject A because its outputs repeat."
+        },
+        "C": {
+          "code": "FN-EQUATION",
+          "reveals": "Treats any equation as a function."
+        },
+        "D": {
+          "code": "FN-LINE",
+          "reveals": "Believes every straight line is a function."
+        }
+      },
+      "teaching_move": "Use the language 'one input, one output'; for each choice, find an input with two outputs, or show that none exists.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "A": "is_function([(1,4),(2,4),(3,4)])",
+          "B": "is_function([(4,1),(4,2),(4,3)])",
+          "C": "is_function([(4,2),(4,-2),(1,1),(1,-1)])",
+          "D": "is_function([(3,0),(3,1),(3,2)])"
+        }
+      }
+    },
+    {
+      "id": "FUNC04",
+      "strand": "FUNC",
+      "skill": "Determine the domain of a rational function",
+      "ccss": [
+        "F-IF.B.5"
+      ],
+      "naep_focus": "patterns, relations and functions - domain and range",
+      "difficulty": 2,
+      "stem": "What is the domain of f(x) = 1 / (x - 4)?",
+      "options": {
+        "A": {
+          "text": "All real numbers except 0",
+          "math": null
+        },
+        "B": {
+          "text": "All real numbers greater than 4",
+          "math": null
+        },
+        "C": {
+          "text": "All real numbers except 4",
+          "math": null
+        },
+        "D": {
+          "text": "All real numbers except -4",
+          "math": null
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "DOMAIN-ZERO",
+          "reveals": "Remembers 'no dividing by zero' as 'x cannot be zero'."
+        },
+        "B": {
+          "code": "DOMAIN-POSITIVE",
+          "reveals": "Borrowed the 'must be positive' restriction from square roots."
+        },
+        "D": {
+          "code": "SIGN-DROP",
+          "reveals": "Solved x - 4 = 0 with a sign error."
+        }
+      },
+      "teaching_move": "Ask 'which input makes the denominator zero?' and solve it; evaluate f(0) and f(3) to show they are defined.",
+      "check": {
+        "type": "assert",
+        "truths": {
+          "C": "undefined_at('1/(x-4)', 4) and defined_at('1/(x-4)', 0) and defined_at('1/(x-4)', -4) and defined_at('1/(x-4)', 3)",
+          "A": "undefined_at('1/(x-4)', 0)",
+          "B": "undefined_at('1/(x-4)', 3)",
+          "D": "undefined_at('1/(x-4)', -4)"
+        }
+      }
+    },
+    {
+      "id": "FUNC05",
+      "strand": "FUNC",
+      "skill": "Interpret function notation as an input-output pair",
+      "ccss": [
+        "F-IF.A.2",
+        "F-IF.A.1"
+      ],
+      "naep_focus": "patterns, relations and functions - function notation",
+      "difficulty": 1,
+      "stem": "For a function h, h(2) = 7. What does this statement mean?",
+      "options": {
+        "A": {
+          "text": "When the input is 7, the output is 2.",
+          "math": null
+        },
+        "B": {
+          "text": "When the input is 2, the output is 7.",
+          "math": null
+        },
+        "C": {
+          "text": "h times 2 equals 7, so h = 3.5.",
+          "math": null
+        },
+        "D": {
+          "text": "The rule for h is 'add 5'.",
+          "math": null
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "FN-REVERSE",
+          "reveals": "Reversed input and output."
+        },
+        "C": {
+          "code": "FN-NOTATION",
+          "reveals": "Read h(2) as multiplication."
+        },
+        "D": {
+          "code": "FN-SINGLEPOINT",
+          "reveals": "Inferred a whole rule from a single input-output pair."
+        }
+      },
+      "teaching_move": "Find two different rules that both give h(2) = 7; always label pairs (input, output).",
+      "check": {
+        "type": "assert",
+        "truths": {}
+      }
+    },
+    {
+      "id": "MOD01",
+      "strand": "MOD",
+      "skill": "Write an equation for a multiplicative comparison",
+      "ccss": [
+        "A-CED.A.1",
+        "A-CED.A.2"
+      ],
+      "naep_focus": "algebraic representations - writing equations from verbal descriptions",
+      "difficulty": 2,
+      "stem": "At a university there are six times as many students as professors. Let S be the number of students and P the number of professors. Which equation is correct?",
+      "options": {
+        "A": {
+          "text": "6S = P",
+          "math": "6*S == P"
+        },
+        "B": {
+          "text": "S = P + 6",
+          "math": "S == P + 6"
+        },
+        "C": {
+          "text": "S = 6P",
+          "math": "S == 6*P"
+        },
+        "D": {
+          "text": "S · P = 6",
+          "math": "S*P == 6"
+        }
+      },
+      "key": "C",
+      "distractors": {
+        "A": {
+          "code": "MOD-REVERSAL",
+          "reveals": "Wrote the symbols in word order; S and P are acting as labels, not numbers."
+        },
+        "B": {
+          "code": "MOD-ADDITIVE",
+          "reveals": "Read 'six times as many' as 'six more than'."
+        },
+        "D": {
+          "code": "MOD-KEYWORD",
+          "reveals": "Mapped 'times' to multiplying the two letters."
+        }
+      },
+      "teaching_move": "Test with numbers first: 10 professors means 60 students. Which equation is true for S = 60, P = 10?",
+      "check": {
+        "type": "relation",
+        "scenarios": [
+          {
+            "S": 60,
+            "P": 10
+          },
+          {
+            "S": 120,
+            "P": 20
+          }
+        ]
+      }
+    },
+    {
+      "id": "MOD02",
+      "strand": "MOD",
+      "skill": "Translate a verbal expression with grouping",
+      "ccss": [
+        "6.EE.A.2a",
+        "A-SSE.A.1"
+      ],
+      "naep_focus": "algebraic representations - writing expressions from verbal descriptions",
+      "difficulty": 1,
+      "stem": "Which expression represents 'twice the sum of a number n and 3'?",
+      "options": {
+        "A": {
+          "text": "2n + 3",
+          "math": "2*n + 3"
+        },
+        "B": {
+          "text": "2 + n + 3",
+          "math": "2 + n + 3"
+        },
+        "C": {
+          "text": "2 · n · 3",
+          "math": "2*n*3"
+        },
+        "D": {
+          "text": "2(n + 3)",
+          "math": "2*(n + 3)"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "MOD-STRUCTURE",
+          "reveals": "Translated word by word and missed the grouping implied by 'the sum'."
+        },
+        "B": {
+          "code": "MOD-KEYWORD",
+          "reveals": "Read 'twice' as 'add 2'."
+        },
+        "C": {
+          "code": "MOD-OP-SWAP",
+          "reveals": "Read 'sum' as multiplication."
+        }
+      },
+      "teaching_move": "Ask 'what is the last thing you do?' (double) and build the expression from the outside in; test with n = 5.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "n"
+        ],
+        "target": "2*(n + 3)"
+      }
+    },
+    {
+      "id": "MOD03",
+      "strand": "MOD",
+      "skill": "Represent a percent increase multiplicatively",
+      "ccss": [
+        "A-SSE.A.1b",
+        "7.RP.A.3"
+      ],
+      "naep_focus": "algebraic representations - expressions for percent change",
+      "difficulty": 2,
+      "stem": "The price p of a jacket increases by 20%. Which expression gives the new price?",
+      "options": {
+        "A": {
+          "text": "1.2p",
+          "math": "1.2*p"
+        },
+        "B": {
+          "text": "p + 20",
+          "math": "p + 20"
+        },
+        "C": {
+          "text": "0.2p",
+          "math": "0.2*p"
+        },
+        "D": {
+          "text": "p / 1.2",
+          "math": "p / 1.2"
+        }
+      },
+      "key": "A",
+      "distractors": {
+        "B": {
+          "code": "PCT-ABSOLUTE",
+          "reveals": "Treated 20% as an amount of 20 dollars."
+        },
+        "C": {
+          "code": "PCT-PART-ONLY",
+          "reveals": "Computed the increase, not the new price."
+        },
+        "D": {
+          "code": "PCT-DIRECTION",
+          "reveals": "Sees the multiplicative structure but applied it in the wrong direction."
+        }
+      },
+      "teaching_move": "Double number line with 100% = p; mark 120%. Check with p = $50 and estimate first: the new price must be bigger.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "p"
+        ],
+        "target": "p + p*20/100"
+      }
+    },
+    {
+      "id": "MOD04",
+      "strand": "MOD",
+      "skill": "Write a linear expression with a fixed amount and a rate",
+      "ccss": [
+        "A-CED.A.1",
+        "F-LE.A.2"
+      ],
+      "naep_focus": "algebraic representations - linear models from context",
+      "difficulty": 1,
+      "stem": "A car rental costs $40 plus $25 per day. Which expression gives the total cost, in dollars, for d days?",
+      "options": {
+        "A": {
+          "text": "25 + 40d",
+          "math": "25 + 40*d"
+        },
+        "B": {
+          "text": "40 + 25d",
+          "math": "40 + 25*d"
+        },
+        "C": {
+          "text": "65d",
+          "math": "65*d"
+        },
+        "D": {
+          "text": "40d + 25d",
+          "math": "40*d + 25*d"
+        }
+      },
+      "key": "B",
+      "distractors": {
+        "A": {
+          "code": "RATE-START-SWAP",
+          "reveals": "Swapped the fixed fee and the daily rate."
+        },
+        "C": {
+          "code": "VAR-CONJOIN",
+          "reveals": "Added the two amounts and attached d to the total."
+        },
+        "D": {
+          "code": "PROPORTIONAL-ALL",
+          "reveals": "Applied 'per day' to both amounts."
+        }
+      },
+      "teaching_move": "Ask what it costs for 0, 1 and 2 days before writing anything; label each number with its units.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "d"
+        ],
+        "target": "40 + 25*d"
+      }
+    },
+    {
+      "id": "MOD05",
+      "strand": "MOD",
+      "skill": "Translate 'less than' correctly",
+      "ccss": [
+        "6.EE.A.2a",
+        "A-SSE.A.1"
+      ],
+      "naep_focus": "algebraic representations - writing expressions from verbal descriptions",
+      "difficulty": 1,
+      "stem": "Which expression represents 'three less than twice a number n'?",
+      "options": {
+        "A": {
+          "text": "3 - 2n",
+          "math": "3 - 2*n"
+        },
+        "B": {
+          "text": "2(n - 3)",
+          "math": "2*(n - 3)"
+        },
+        "C": {
+          "text": "3 < 2n",
+          "math": null
+        },
+        "D": {
+          "text": "2n - 3",
+          "math": "2*n - 3"
+        }
+      },
+      "key": "D",
+      "distractors": {
+        "A": {
+          "code": "MOD-ORDER-SUB",
+          "reveals": "Wrote the subtraction in word order."
+        },
+        "B": {
+          "code": "MOD-STRUCTURE",
+          "reveals": "Placed the grouping on the wrong part of the phrase."
+        },
+        "C": {
+          "code": "MOD-KEYWORD",
+          "reveals": "Mapped the words 'less than' to the symbol <."
+        }
+      },
+      "teaching_move": "Numeric translation first ('three less than 10 is 7, so 10 - 3'), then replace 10 with 2n.",
+      "check": {
+        "type": "expr",
+        "vars": [
+          "n"
+        ],
+        "target": "2*n - 3"
+      }
+    }
+  ],
+  "forms": {
+    "A": [
+      "EQ01",
+      "EQ02",
+      "EQ03",
+      "VAR01",
+      "VAR02",
+      "DIST01",
+      "DIST02",
+      "DIST03",
+      "LIN01",
+      "LIN02",
+      "NUM01",
+      "NUM02",
+      "NUM03",
+      "LINF01",
+      "LINF02",
+      "FUNC01",
+      "FUNC02",
+      "FUNC03",
+      "MOD01",
+      "MOD02"
+    ],
+    "B": [
+      "EQ04",
+      "EQ05",
+      "VAR04",
+      "VAR05",
+      "VAR03",
+      "DIST04",
+      "DIST05",
+      "LIN04",
+      "LIN05",
+      "LIN03",
+      "NUM04",
+      "NUM05",
+      "LINF04",
+      "LINF05",
+      "LINF03",
+      "FUNC04",
+      "FUNC05",
+      "MOD04",
+      "MOD05",
+      "MOD03"
+    ]
+  }
+}

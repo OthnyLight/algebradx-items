@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "upload_type": "dataset",
+    "title": "AlgebraDx Open Diagnostic Item Bank for Algebra Readiness (Grades 9-12)",
+    "creators": [
+      {
+        "name": "Sa'anga, Othniel Iyassa",
+        "orcid": "0009-0002-6113-6158",
+        "affiliation": "Independent Researcher, Indianapolis, IN, USA"
+      }
+    ],
+    "description": "<p>Forty original multiple-choice items for diagnosing algebra readiness in grades 9-12. Every wrong answer is coded to one of 64 research-documented misconceptions and paired with a teaching move and a probe question. Includes parallel 20-item forms, a teacher guide, CSV/JSON exports and a local calibration kit. No student data collected; no NAEP or TIMSS item text reproduced.</p><p>Items were drafted with AI assistance from the published misconception research and reviewed and verified by the author.</p>",
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "version": "1.0.0",
+    "keywords": [
+      "algebra",
+      "diagnostic assessment",
+      "misconceptions",
+      "item bank",
+      "distractor analysis",
+      "mathematics education",
+      "open educational resources"
+    ]
+  }
+}

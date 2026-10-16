@@ -1,0 +1,18 @@
+code,name,students_flagged,pct_students,times_chosen,teaching_move
+VAR-CONJOIN,Conjoining unlike terms,70,0.23,225,"Substitution check. Evaluate 2x + 3 and 5x at x = 10 and compare. Use algebra tiles or ""3 apples + 2 bananas"" only as a bridge to the substitution check, not as the explanation; see VAR-LABEL."
+EXP-MULT,"Exponent treated as multiplication (x³ = 3x, 2⁻³ = −6)",47,0.16,222,Expand into repeated factors (x³ = x · x · x) every time until fluent. Contrast 2³ and 2 · 3.
+SIGN-DROP,Drops or mishandles a negative sign,34,0.11,163,Circle each term together with the sign in front of it. Check every answer by substitution.
+VAR-SPECIFIC,Generalizing from a single example,31,0.10,121,"Require at least three test values chosen to break the claim (0, 1, a negative, a fraction). Then ask for a reason that holds for every value, not just the tested ones."
+RATE-START-SWAP,Swaps the rate and the starting amount,30,0.10,107,"In context, ask ""what does it cost for 0 days / minutes?"" and ""what changes each additional day?"" before writing anything. Annotate each number in the model with units (dollars, dollars per day)."
+EQ-TRANSPOSE,"""Move it to the other side"" without the inverse operation",27,0.09,156,"Ban the word ""move"" for a week. Write the both-sides operation explicitly (−7 on each side) and show the incorrect and correct versions side by side. Ask students to explain why the incorrect one changes the solution."
+VAR-SURFACE,Judging by surface features of symbols,27,0.09,138,"Counterexample hunts. For each claim, students test negative, zero, fractional and large values. Celebrate a single counterexample as a proof that ""always"" is false."
+DIST-FIRST,Distributes to the first term only,24,0.08,113,"Area model. A rectangle of width 4 and length x + 3 has two parts, so it has two products. Then use arrows from the factor to every term inside the parentheses, and fade them."
+FN-NOTATION,f(x) read as arithmetic on f,22,0.07,152,"Use an input-output machine. Write f(□) = □² − 1 with a blank box, and substitute whatever goes in the box, including expressions."
+EQ-ONESIDE,Operation applied to only part of the equation,21,0.07,115,"Pair each solving step with a check by substitution of the original solution into the new equation. If the new equation is false, the step broke equality. Use balance or tape diagrams for multi-term sides."
+PROPORTIONAL-ALL,Every linear relationship treated as proportional,18,0.06,65,Check the x = 0 row of every table first. Contrast proportional and non-proportional tables side by side.
+EXP-NEG-BASE,−a² read as (−a)²,16,0.05,79,"Read −3² aloud as ""the opposite of three squared"". Contrast −3² and (−3)² in a worked-example pair. Substitute negatives in parentheses, always."
+MOD-KEYWORD,Keyword translation,12,0.04,86,"Retire keyword charts. Have students describe the quantities and the relationship first, then test the expression with a number."
+SIGN-SUB,Errors with subtracting or multiplying negatives,9,0.03,60,"Use a number line with direction for subtraction. Build the rule from patterns (3 · −2, 2 · −2, 1 · −2, 0 · −2, −1 · −2 …) rather than stating it."
+RATE-TOTAL,Rate confused with total,8,0.03,46,Units analysis. Write the units of every term (0.10 dollars per minute × m minutes = dollars).
+INV-OP,Wrong inverse operation,8,0.03,65,"Arrow diagrams (""x → ×3 → +2 → 17"") read forward, then undone backward with inverses written on the arrows."
+LIKE-TERMS-OP,Adding like terms treated as multiplication,4,0.01,39,"Contrast pairs: 3x + 5x vs. 3x · 5x, x + x vs. x · x, each checked by substituting x = 2. Area model for products, length model for sums."

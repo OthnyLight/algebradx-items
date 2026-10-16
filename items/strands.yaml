@@ -1,0 +1,25 @@
+# Strands of the AlgebraDx readiness model (v1.0). Order is the print order.
+EQ:
+  name: Equality and equivalence
+  why: Students who read "=" as "the answer comes next" cannot reason about equivalent equations, which is the core move of all equation solving.
+VAR:
+  name: Variables and expressions
+  why: Algebra requires letters to stand for numbers that vary. Students who treat letters as labels or single unknowns stall when expressions must be compared or generalized.
+DIST:
+  name: Distributive property and factoring
+  why: Expanding and factoring are the transformations of algebra. Errors here (including over-applying "linearity") recur in every later course.
+LIN:
+  name: Linear equations and inequalities
+  why: Solving linear equations and inequalities is the gateway skill of Algebra I, and the place where move-it rules replace reasons.
+NUM:
+  name: Integers, exponents and rational expressions
+  why: Many "algebra" errors are number-sense errors in disguise, especially with negatives, exponents and fractions.
+LINF:
+  name: Linear functions and rate of change
+  why: Slope as a rate and the meaning of parameters in context connect symbols, tables and graphs, the bridge into functions.
+FUNC:
+  name: Functions and notation
+  why: Function notation and the definition of a function are new in high school, and misreadings (f(x) as multiplication) block Algebra II.
+MOD:
+  name: Translating words into symbols
+  why: Modeling requires moving from relationships described in words to symbols. Keyword strategies and word-order translation fail here.

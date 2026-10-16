@@ -1,0 +1,79 @@
+AlgebraDx Item Bank: QA report
+========================================
+Items: 40   Strands: {'EQ': 5, 'VAR': 5, 'DIST': 5, 'LIN': 5, 'NUM': 5, 'LINF': 5, 'FUNC': 5, 'MOD': 5}
+Difficulty (hypothesized): {'1': 15, '2': 20, '3': 5}
+Key balance: {'A': 10, 'B': 10, 'C': 10, 'D': 10}
+Distractors: 120   Misconception codes used: 64 of 64
+Unused catalog codes: none
+CCSS codes referenced: 40
+
+Mechanical checks (key correct / distractor wrong): 143 of 143 passed
+Options needing hand review (no machine-checkable math): 17
+
+Per-item results (ok = verified, hand = author must check, FAIL = error)
+----------------------------------------
+EQ01    key=A A:ok B:ok C:ok D:ok
+EQ02    key=C A:ok B:ok C:ok D:hand
+EQ03    key=B A:ok B:ok C:ok D:ok
+EQ04    key=D A:ok B:ok C:ok D:ok
+EQ05    key=C A:hand B:hand C:ok D:hand
+VAR01   key=B A:ok B:ok C:ok D:ok
+VAR02   key=A A:ok B:ok C:ok D:ok
+VAR03   key=C A:ok B:ok C:ok D:hand
+VAR04   key=D A:ok B:hand C:ok D:ok
+VAR05   key=D A:ok B:ok C:ok D:ok
+DIST01  key=C A:ok B:ok C:ok D:ok
+DIST02  key=A A:ok B:ok C:ok D:ok
+DIST03  key=B A:ok B:ok C:ok D:ok
+DIST04  key=D A:ok B:ok C:ok D:ok
+DIST05  key=B A:ok B:ok C:ok D:ok
+LIN01   key=D A:ok B:ok C:ok D:ok
+LIN02   key=A A:ok B:ok C:ok D:ok
+LIN03   key=C A:ok B:ok C:ok D:ok
+LIN04   key=B A:ok B:ok C:ok D:hand
+LIN05   key=A A:ok B:ok C:ok D:ok
+NUM01   key=B A:ok B:ok C:ok D:ok
+NUM02   key=D A:ok B:ok C:ok D:ok
+NUM03   key=A A:ok B:ok C:ok D:ok
+NUM04   key=C A:ok B:ok C:ok D:ok
+NUM05   key=C A:ok B:ok C:ok D:ok
+LINF01  key=A A:ok B:ok C:ok D:ok
+LINF02  key=B A:ok B:ok C:ok D:ok
+LINF03  key=D A:hand B:hand C:hand D:ok
+LINF04  key=C A:ok B:ok C:ok D:ok
+LINF05  key=A A:ok B:hand C:ok D:ok
+FUNC01  key=D A:ok B:ok C:hand D:ok
+FUNC02  key=B A:ok B:ok C:ok D:ok
+FUNC03  key=A A:ok B:ok C:ok D:ok
+FUNC04  key=C A:ok B:ok C:ok D:ok
+FUNC05  key=B A:hand B:hand C:hand D:hand
+MOD01   key=C A:ok B:ok C:ok D:ok
+MOD02   key=D A:ok B:ok C:ok D:ok
+MOD03   key=A A:ok B:ok C:ok D:ok
+MOD04   key=B A:ok B:ok C:ok D:ok
+MOD05   key=D A:ok B:ok C:hand D:ok
+
+Hand-review list
+----------------------------------------
+EQ02D: You cannot tell without computing both sides.
+EQ05A: Only x = 0
+EQ05B: No values, because the x-terms cancel
+EQ05D: Only x = -3
+VAR03D: Never true, because there are no numbers to check
+VAR04B: e
+LIN04D: There is no solution, because x is on both sides.
+LINF03A: The monthly starting fee
+LINF03B: The total cost of m minutes
+LINF03C: The number of minutes used
+LINF05B: Walking along a flat road
+FUNC01C: 3x² - 3
+FUNC05A: When the input is 7, the output is 2.
+FUNC05B (KEY): When the input is 2, the output is 7.
+FUNC05C: h times 2 equals 7, so h = 3.5.
+FUNC05D: The rule for h is 'add 5'.
+MOD05C: 3 < 2n
+
+Form A (20 items): EQ01 EQ02 EQ03 VAR01 VAR02 DIST01 DIST02 DIST03 LIN01 LIN02 NUM01 NUM02 NUM03 LINF01 LINF02 FUNC01 FUNC02 FUNC03 MOD01 MOD02
+Form B (20 items): EQ04 EQ05 VAR04 VAR05 VAR03 DIST04 DIST05 LIN04 LIN05 LIN03 NUM04 NUM05 LINF04 LINF05 LINF03 FUNC04 FUNC05 MOD04 MOD05 MOD03
+
+No errors.
