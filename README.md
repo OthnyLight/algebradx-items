@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24519552.svg)](https://doi.org/10.5281/zenodo.24519552)
+
 # AlgebraDx Open Diagnostic Item Bank
 
 **Status:** Released v1.0.0 (2026-10-10), verified by the author | **Maintainer:** Othniel Iyassa Sa'anga, [ORCID 0009-0002-6113-6158](https://orcid.org/0009-0002-6113-6158) | **License:** items, guides and article CC BY 4.0; code MIT
@@ -59,4 +61,4 @@ Read `docs/LIMITATIONS.md` before using or citing anything here. In short: the i
 
 ## Citation
 
-See `CITATION.cff`. DOI: added after the Zenodo deposit.
+See `CITATION.cff`. Archived on Zenodo: [doi:10.5281/zenodo.24519552](https://doi.org/10.5281/zenodo.24519552) (all versions; v1.0.0 is [doi:10.5281/zenodo.24519553](https://doi.org/10.5281/zenodo.24519553)).
