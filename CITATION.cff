@@ -4,6 +4,7 @@ type: dataset
 title: "AlgebraDx Open Diagnostic Item Bank for Algebra Readiness (Grades 9-12)"
 version: "1.0.0"
 date-released: "2026-10-10"
+doi: "10.5281/zenodo.24519552"
 authors:
   - family-names: "Sa'anga"
     given-names: "Othniel Iyassa"
@@ -23,3 +24,10 @@ keywords:
   - distractor analysis
   - mathematics education
   - open educational resources
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24519552"
+    description: "Zenodo concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.24519553"
+    description: "Zenodo DOI for v1.0.0"
